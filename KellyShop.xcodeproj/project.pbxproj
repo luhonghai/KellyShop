@@ -1,0 +1,524 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		87A6BF1D1CA040E200BF2AF7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A6BF1C1CA040E200BF2AF7 /* AppDelegate.swift */; };
+		87A6BF1F1CA040E200BF2AF7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A6BF1E1CA040E200BF2AF7 /* ViewController.swift */; };
+		87A6BF221CA040E200BF2AF7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87A6BF201CA040E200BF2AF7 /* Main.storyboard */; };
+		87A6BF251CA040E200BF2AF7 /* KellyShop.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 87A6BF231CA040E200BF2AF7 /* KellyShop.xcdatamodeld */; };
+		87A6BF271CA040E200BF2AF7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 87A6BF261CA040E200BF2AF7 /* Assets.xcassets */; };
+		87A6BF2A1CA040E200BF2AF7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87A6BF281CA040E200BF2AF7 /* LaunchScreen.storyboard */; };
+		87A6BF351CA040E200BF2AF7 /* KellyShopTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A6BF341CA040E200BF2AF7 /* KellyShopTests.swift */; };
+		87A6BF401CA040E200BF2AF7 /* KellyShopUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A6BF3F1CA040E200BF2AF7 /* KellyShopUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		87A6BF311CA040E200BF2AF7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 87A6BF111CA040E200BF2AF7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 87A6BF181CA040E200BF2AF7;
+			remoteInfo = KellyShop;
+		};
+		87A6BF3C1CA040E200BF2AF7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 87A6BF111CA040E200BF2AF7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 87A6BF181CA040E200BF2AF7;
+			remoteInfo = KellyShop;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		87A6BF191CA040E200BF2AF7 /* KellyShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KellyShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		87A6BF1C1CA040E200BF2AF7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		87A6BF1E1CA040E200BF2AF7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		87A6BF211CA040E200BF2AF7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		87A6BF241CA040E200BF2AF7 /* KellyShop.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = KellyShop.xcdatamodel; sourceTree = "<group>"; };
+		87A6BF261CA040E200BF2AF7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		87A6BF291CA040E200BF2AF7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		87A6BF2B1CA040E200BF2AF7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		87A6BF301CA040E200BF2AF7 /* KellyShopTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KellyShopTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		87A6BF341CA040E200BF2AF7 /* KellyShopTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KellyShopTests.swift; sourceTree = "<group>"; };
+		87A6BF361CA040E200BF2AF7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		87A6BF3B1CA040E200BF2AF7 /* KellyShopUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KellyShopUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		87A6BF3F1CA040E200BF2AF7 /* KellyShopUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KellyShopUITests.swift; sourceTree = "<group>"; };
+		87A6BF411CA040E200BF2AF7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		87A6BF161CA040E200BF2AF7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		87A6BF2D1CA040E200BF2AF7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		87A6BF381CA040E200BF2AF7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		87A6BF101CA040E200BF2AF7 = {
+			isa = PBXGroup;
+			children = (
+				87A6BF1B1CA040E200BF2AF7 /* KellyShop */,
+				87A6BF331CA040E200BF2AF7 /* KellyShopTests */,
+				87A6BF3E1CA040E200BF2AF7 /* KellyShopUITests */,
+				87A6BF1A1CA040E200BF2AF7 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		87A6BF1A1CA040E200BF2AF7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				87A6BF191CA040E200BF2AF7 /* KellyShop.app */,
+				87A6BF301CA040E200BF2AF7 /* KellyShopTests.xctest */,
+				87A6BF3B1CA040E200BF2AF7 /* KellyShopUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		87A6BF1B1CA040E200BF2AF7 /* KellyShop */ = {
+			isa = PBXGroup;
+			children = (
+				87A6BF1C1CA040E200BF2AF7 /* AppDelegate.swift */,
+				87A6BF1E1CA040E200BF2AF7 /* ViewController.swift */,
+				87A6BF201CA040E200BF2AF7 /* Main.storyboard */,
+				87A6BF261CA040E200BF2AF7 /* Assets.xcassets */,
+				87A6BF281CA040E200BF2AF7 /* LaunchScreen.storyboard */,
+				87A6BF2B1CA040E200BF2AF7 /* Info.plist */,
+				87A6BF231CA040E200BF2AF7 /* KellyShop.xcdatamodeld */,
+			);
+			path = KellyShop;
+			sourceTree = "<group>";
+		};
+		87A6BF331CA040E200BF2AF7 /* KellyShopTests */ = {
+			isa = PBXGroup;
+			children = (
+				87A6BF341CA040E200BF2AF7 /* KellyShopTests.swift */,
+				87A6BF361CA040E200BF2AF7 /* Info.plist */,
+			);
+			path = KellyShopTests;
+			sourceTree = "<group>";
+		};
+		87A6BF3E1CA040E200BF2AF7 /* KellyShopUITests */ = {
+			isa = PBXGroup;
+			children = (
+				87A6BF3F1CA040E200BF2AF7 /* KellyShopUITests.swift */,
+				87A6BF411CA040E200BF2AF7 /* Info.plist */,
+			);
+			path = KellyShopUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		87A6BF181CA040E200BF2AF7 /* KellyShop */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 87A6BF441CA040E200BF2AF7 /* Build configuration list for PBXNativeTarget "KellyShop" */;
+			buildPhases = (
+				87A6BF151CA040E200BF2AF7 /* Sources */,
+				87A6BF161CA040E200BF2AF7 /* Frameworks */,
+				87A6BF171CA040E200BF2AF7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KellyShop;
+			productName = KellyShop;
+			productReference = 87A6BF191CA040E200BF2AF7 /* KellyShop.app */;
+			productType = "com.apple.product-type.application";
+		};
+		87A6BF2F1CA040E200BF2AF7 /* KellyShopTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 87A6BF471CA040E200BF2AF7 /* Build configuration list for PBXNativeTarget "KellyShopTests" */;
+			buildPhases = (
+				87A6BF2C1CA040E200BF2AF7 /* Sources */,
+				87A6BF2D1CA040E200BF2AF7 /* Frameworks */,
+				87A6BF2E1CA040E200BF2AF7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				87A6BF321CA040E200BF2AF7 /* PBXTargetDependency */,
+			);
+			name = KellyShopTests;
+			productName = KellyShopTests;
+			productReference = 87A6BF301CA040E200BF2AF7 /* KellyShopTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		87A6BF3A1CA040E200BF2AF7 /* KellyShopUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 87A6BF4A1CA040E200BF2AF7 /* Build configuration list for PBXNativeTarget "KellyShopUITests" */;
+			buildPhases = (
+				87A6BF371CA040E200BF2AF7 /* Sources */,
+				87A6BF381CA040E200BF2AF7 /* Frameworks */,
+				87A6BF391CA040E200BF2AF7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				87A6BF3D1CA040E200BF2AF7 /* PBXTargetDependency */,
+			);
+			name = KellyShopUITests;
+			productName = KellyShopUITests;
+			productReference = 87A6BF3B1CA040E200BF2AF7 /* KellyShopUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		87A6BF111CA040E200BF2AF7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0720;
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = "Hai Lu";
+				TargetAttributes = {
+					87A6BF181CA040E200BF2AF7 = {
+						CreatedOnToolsVersion = 7.2;
+					};
+					87A6BF2F1CA040E200BF2AF7 = {
+						CreatedOnToolsVersion = 7.2;
+						TestTargetID = 87A6BF181CA040E200BF2AF7;
+					};
+					87A6BF3A1CA040E200BF2AF7 = {
+						CreatedOnToolsVersion = 7.2;
+						TestTargetID = 87A6BF181CA040E200BF2AF7;
+					};
+				};
+			};
+			buildConfigurationList = 87A6BF141CA040E200BF2AF7 /* Build configuration list for PBXProject "KellyShop" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 87A6BF101CA040E200BF2AF7;
+			productRefGroup = 87A6BF1A1CA040E200BF2AF7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				87A6BF181CA040E200BF2AF7 /* KellyShop */,
+				87A6BF2F1CA040E200BF2AF7 /* KellyShopTests */,
+				87A6BF3A1CA040E200BF2AF7 /* KellyShopUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		87A6BF171CA040E200BF2AF7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				87A6BF2A1CA040E200BF2AF7 /* LaunchScreen.storyboard in Resources */,
+				87A6BF271CA040E200BF2AF7 /* Assets.xcassets in Resources */,
+				87A6BF221CA040E200BF2AF7 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		87A6BF2E1CA040E200BF2AF7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		87A6BF391CA040E200BF2AF7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		87A6BF151CA040E200BF2AF7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				87A6BF251CA040E200BF2AF7 /* KellyShop.xcdatamodeld in Sources */,
+				87A6BF1F1CA040E200BF2AF7 /* ViewController.swift in Sources */,
+				87A6BF1D1CA040E200BF2AF7 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		87A6BF2C1CA040E200BF2AF7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				87A6BF351CA040E200BF2AF7 /* KellyShopTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		87A6BF371CA040E200BF2AF7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				87A6BF401CA040E200BF2AF7 /* KellyShopUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		87A6BF321CA040E200BF2AF7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 87A6BF181CA040E200BF2AF7 /* KellyShop */;
+			targetProxy = 87A6BF311CA040E200BF2AF7 /* PBXContainerItemProxy */;
+		};
+		87A6BF3D1CA040E200BF2AF7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 87A6BF181CA040E200BF2AF7 /* KellyShop */;
+			targetProxy = 87A6BF3C1CA040E200BF2AF7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		87A6BF201CA040E200BF2AF7 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				87A6BF211CA040E200BF2AF7 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		87A6BF281CA040E200BF2AF7 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				87A6BF291CA040E200BF2AF7 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		87A6BF421CA040E200BF2AF7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		87A6BF431CA040E200BF2AF7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		87A6BF451CA040E200BF2AF7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = KellyShop/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.luhonghai.KellyShop;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		87A6BF461CA040E200BF2AF7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = KellyShop/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.luhonghai.KellyShop;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		87A6BF481CA040E200BF2AF7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = KellyShopTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.luhonghai.KellyShopTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KellyShop.app/KellyShop";
+			};
+			name = Debug;
+		};
+		87A6BF491CA040E200BF2AF7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = KellyShopTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.luhonghai.KellyShopTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KellyShop.app/KellyShop";
+			};
+			name = Release;
+		};
+		87A6BF4B1CA040E200BF2AF7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = KellyShopUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.luhonghai.KellyShopUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = KellyShop;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		87A6BF4C1CA040E200BF2AF7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = KellyShopUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.luhonghai.KellyShopUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = KellyShop;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		87A6BF141CA040E200BF2AF7 /* Build configuration list for PBXProject "KellyShop" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				87A6BF421CA040E200BF2AF7 /* Debug */,
+				87A6BF431CA040E200BF2AF7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		87A6BF441CA040E200BF2AF7 /* Build configuration list for PBXNativeTarget "KellyShop" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				87A6BF451CA040E200BF2AF7 /* Debug */,
+				87A6BF461CA040E200BF2AF7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		87A6BF471CA040E200BF2AF7 /* Build configuration list for PBXNativeTarget "KellyShopTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				87A6BF481CA040E200BF2AF7 /* Debug */,
+				87A6BF491CA040E200BF2AF7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		87A6BF4A1CA040E200BF2AF7 /* Build configuration list for PBXNativeTarget "KellyShopUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				87A6BF4B1CA040E200BF2AF7 /* Debug */,
+				87A6BF4C1CA040E200BF2AF7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		87A6BF231CA040E200BF2AF7 /* KellyShop.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				87A6BF241CA040E200BF2AF7 /* KellyShop.xcdatamodel */,
+			);
+			currentVersion = 87A6BF241CA040E200BF2AF7 /* KellyShop.xcdatamodel */;
+			path = KellyShop.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 87A6BF111CA040E200BF2AF7 /* Project object */;
+}
