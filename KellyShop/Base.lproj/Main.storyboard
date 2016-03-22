@@ -8,7 +8,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="KellyShop" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Jenny_s_shop" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -36,7 +36,7 @@
         <!--Login Controller-->
         <scene sceneID="5AX-dH-ED4">
             <objects>
-                <viewController id="UJl-Vv-j4B" customClass="LoginController" customModule="KellyShop" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="UJl-Vv-j4B" customClass="LoginController" customModule="Jenny_s_shop" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="xo3-WY-eJR"/>
                         <viewControllerLayoutGuide type="bottom" id="P5g-hV-f6P"/>
@@ -44,6 +44,11 @@
                     <view key="view" contentMode="scaleToFill" id="pfu-Mx-SxU">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Koi-K5-4Wu">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>

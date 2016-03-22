@@ -50,7 +50,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		87A6BF191CA040E200BF2AF7 /* KellyShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KellyShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		87A6BF191CA040E200BF2AF7 /* Jenny's shop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Jenny's shop.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		87A6BF1C1CA040E200BF2AF7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		87A6BF1E1CA040E200BF2AF7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		87A6BF211CA040E200BF2AF7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -158,7 +158,7 @@
 		87A6BF1A1CA040E200BF2AF7 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				87A6BF191CA040E200BF2AF7 /* KellyShop.app */,
+				87A6BF191CA040E200BF2AF7 /* Jenny's shop.app */,
 				87A6BF301CA040E200BF2AF7 /* KellyShopTests.xctest */,
 				87A6BF3B1CA040E200BF2AF7 /* KellyShopUITests.xctest */,
 			);
@@ -232,7 +232,7 @@
 			);
 			name = KellyShop;
 			productName = KellyShop;
-			productReference = 87A6BF191CA040E200BF2AF7 /* KellyShop.app */;
+			productReference = 87A6BF191CA040E200BF2AF7 /* Jenny's shop.app */;
 			productType = "com.apple.product-type.application";
 		};
 		87A6BF2F1CA040E200BF2AF7 /* KellyShopTests */ = {
@@ -554,8 +554,8 @@
 				INFOPLIST_FILE = KellyShop/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.luhonghai.kellyshop;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.luhonghai.jennyshop;
+				PRODUCT_NAME = "Jenny's shop";
 				SWIFT_OBJC_BRIDGING_HEADER = "KellyShop-Bridging-Header.h";
 				"SWIFT_OBJC_BRIDGING_HEADER[arch=*]" = "KellyShop-Bridging-Header.h";
 			};
@@ -574,8 +574,8 @@
 				INFOPLIST_FILE = KellyShop/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.luhonghai.kellyshop;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.luhonghai.jennyshop;
+				PRODUCT_NAME = "Jenny's shop";
 				SWIFT_OBJC_BRIDGING_HEADER = "KellyShop-Bridging-Header.h";
 				"SWIFT_OBJC_BRIDGING_HEADER[arch=*]" = "KellyShop-Bridging-Header.h";
 			};
