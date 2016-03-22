@@ -15,6 +15,21 @@
 		87A6BF2A1CA040E200BF2AF7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87A6BF281CA040E200BF2AF7 /* LaunchScreen.storyboard */; };
 		87A6BF351CA040E200BF2AF7 /* KellyShopTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A6BF341CA040E200BF2AF7 /* KellyShopTests.swift */; };
 		87A6BF401CA040E200BF2AF7 /* KellyShopUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A6BF3F1CA040E200BF2AF7 /* KellyShopUITests.swift */; };
+		87A6BF521CA0439C00BF2AF7 /* FileHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A6BF4E1CA0439C00BF2AF7 /* FileHelper.swift */; };
+		87A6BF531CA0439C00BF2AF7 /* HttpDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A6BF4F1CA0439C00BF2AF7 /* HttpDownloader.swift */; };
+		87A6BF541CA0439C00BF2AF7 /* ImageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A6BF501CA0439C00BF2AF7 /* ImageHelper.swift */; };
+		87A6BF551CA0439C00BF2AF7 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A6BF511CA0439C00BF2AF7 /* Logger.swift */; };
+		87A6BF571CA043E800BF2AF7 /* StringHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A6BF561CA043E800BF2AF7 /* StringHelper.swift */; };
+		87A6BF601CA04A4700BF2AF7 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87A6BF581CA04A4700BF2AF7 /* Bolts.framework */; };
+		87A6BF611CA04A4700BF2AF7 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87A6BF591CA04A4700BF2AF7 /* FBSDKCoreKit.framework */; };
+		87A6BF621CA04A4700BF2AF7 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87A6BF5A1CA04A4700BF2AF7 /* FBSDKLoginKit.framework */; };
+		87A6BF631CA04A4700BF2AF7 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87A6BF5B1CA04A4700BF2AF7 /* FBSDKShareKit.framework */; };
+		87A6BF641CA04A4700BF2AF7 /* ImageLoader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87A6BF5C1CA04A4700BF2AF7 /* ImageLoader.framework */; };
+		87A6BF651CA04A4700BF2AF7 /* ImagePicker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87A6BF5D1CA04A4700BF2AF7 /* ImagePicker.framework */; };
+		87A6BF661CA04A4700BF2AF7 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87A6BF5E1CA04A4700BF2AF7 /* Realm.framework */; };
+		87A6BF671CA04A4700BF2AF7 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87A6BF5F1CA04A4700BF2AF7 /* RealmSwift.framework */; };
+		87F0A85A1CA0FB0C0018B31E /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F0A8591CA0FB0C0018B31E /* LoginController.swift */; };
+		E5E0FD7673892026471E7A59 /* Pods_KellyShop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93C198F42D34580BC08E4ABF /* Pods_KellyShop.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +64,24 @@
 		87A6BF3B1CA040E200BF2AF7 /* KellyShopUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KellyShopUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		87A6BF3F1CA040E200BF2AF7 /* KellyShopUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KellyShopUITests.swift; sourceTree = "<group>"; };
 		87A6BF411CA040E200BF2AF7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		87A6BF4E1CA0439C00BF2AF7 /* FileHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FileHelper.swift; path = Utils/FileHelper.swift; sourceTree = "<group>"; };
+		87A6BF4F1CA0439C00BF2AF7 /* HttpDownloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HttpDownloader.swift; path = Utils/HttpDownloader.swift; sourceTree = "<group>"; };
+		87A6BF501CA0439C00BF2AF7 /* ImageHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageHelper.swift; path = Utils/ImageHelper.swift; sourceTree = "<group>"; };
+		87A6BF511CA0439C00BF2AF7 /* Logger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Logger.swift; path = Utils/Logger.swift; sourceTree = "<group>"; };
+		87A6BF561CA043E800BF2AF7 /* StringHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StringHelper.swift; path = Utils/StringHelper.swift; sourceTree = "<group>"; };
+		87A6BF581CA04A4700BF2AF7 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = "Pods/../build/Debug-iphoneos/Bolts.framework"; sourceTree = "<group>"; };
+		87A6BF591CA04A4700BF2AF7 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = "Pods/../build/Debug-iphoneos/FBSDKCoreKit.framework"; sourceTree = "<group>"; };
+		87A6BF5A1CA04A4700BF2AF7 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = "Pods/../build/Debug-iphoneos/FBSDKLoginKit.framework"; sourceTree = "<group>"; };
+		87A6BF5B1CA04A4700BF2AF7 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKShareKit.framework; path = "Pods/../build/Debug-iphoneos/FBSDKShareKit.framework"; sourceTree = "<group>"; };
+		87A6BF5C1CA04A4700BF2AF7 /* ImageLoader.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageLoader.framework; path = "Pods/../build/Debug-iphoneos/ImageLoader.framework"; sourceTree = "<group>"; };
+		87A6BF5D1CA04A4700BF2AF7 /* ImagePicker.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImagePicker.framework; path = "Pods/../build/Debug-iphoneos/ImagePicker.framework"; sourceTree = "<group>"; };
+		87A6BF5E1CA04A4700BF2AF7 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = "Pods/../build/Debug-iphoneos/Realm.framework"; sourceTree = "<group>"; };
+		87A6BF5F1CA04A4700BF2AF7 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = "Pods/../build/Debug-iphoneos/RealmSwift.framework"; sourceTree = "<group>"; };
+		87A6BF691CA04C2E00BF2AF7 /* KellyShop-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KellyShop-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
+		87F0A8591CA0FB0C0018B31E /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		93C198F42D34580BC08E4ABF /* Pods_KellyShop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KellyShop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BE2E456AEF4D007D7235B2D8 /* Pods-KellyShop.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KellyShop.release.xcconfig"; path = "Pods/Target Support Files/Pods-KellyShop/Pods-KellyShop.release.xcconfig"; sourceTree = "<group>"; };
+		F592E5A1FFD80248252B233C /* Pods-KellyShop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KellyShop.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KellyShop/Pods-KellyShop.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +89,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				87A6BF601CA04A4700BF2AF7 /* Bolts.framework in Frameworks */,
+				87A6BF611CA04A4700BF2AF7 /* FBSDKCoreKit.framework in Frameworks */,
+				87A6BF621CA04A4700BF2AF7 /* FBSDKLoginKit.framework in Frameworks */,
+				87A6BF631CA04A4700BF2AF7 /* FBSDKShareKit.framework in Frameworks */,
+				87A6BF641CA04A4700BF2AF7 /* ImageLoader.framework in Frameworks */,
+				87A6BF651CA04A4700BF2AF7 /* ImagePicker.framework in Frameworks */,
+				87A6BF661CA04A4700BF2AF7 /* Realm.framework in Frameworks */,
+				87A6BF671CA04A4700BF2AF7 /* RealmSwift.framework in Frameworks */,
+				E5E0FD7673892026471E7A59 /* Pods_KellyShop.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,6 +118,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1017450A84AA4610F2BA61D2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F592E5A1FFD80248252B233C /* Pods-KellyShop.debug.xcconfig */,
+				BE2E456AEF4D007D7235B2D8 /* Pods-KellyShop.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		27FCD74B4E26679CEC0F11C3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				87A6BF581CA04A4700BF2AF7 /* Bolts.framework */,
+				87A6BF591CA04A4700BF2AF7 /* FBSDKCoreKit.framework */,
+				87A6BF5A1CA04A4700BF2AF7 /* FBSDKLoginKit.framework */,
+				87A6BF5B1CA04A4700BF2AF7 /* FBSDKShareKit.framework */,
+				87A6BF5C1CA04A4700BF2AF7 /* ImageLoader.framework */,
+				87A6BF5D1CA04A4700BF2AF7 /* ImagePicker.framework */,
+				87A6BF5E1CA04A4700BF2AF7 /* Realm.framework */,
+				87A6BF5F1CA04A4700BF2AF7 /* RealmSwift.framework */,
+				93C198F42D34580BC08E4ABF /* Pods_KellyShop.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		87A6BF101CA040E200BF2AF7 = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +150,8 @@
 				87A6BF331CA040E200BF2AF7 /* KellyShopTests */,
 				87A6BF3E1CA040E200BF2AF7 /* KellyShopUITests */,
 				87A6BF1A1CA040E200BF2AF7 /* Products */,
+				1017450A84AA4610F2BA61D2 /* Pods */,
+				27FCD74B4E26679CEC0F11C3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,6 +168,8 @@
 		87A6BF1B1CA040E200BF2AF7 /* KellyShop */ = {
 			isa = PBXGroup;
 			children = (
+				87A6BF691CA04C2E00BF2AF7 /* KellyShop-Bridging-Header.h */,
+				87A6BF4D1CA0439500BF2AF7 /* Utils */,
 				87A6BF1C1CA040E200BF2AF7 /* AppDelegate.swift */,
 				87A6BF1E1CA040E200BF2AF7 /* ViewController.swift */,
 				87A6BF201CA040E200BF2AF7 /* Main.storyboard */,
@@ -106,6 +177,7 @@
 				87A6BF281CA040E200BF2AF7 /* LaunchScreen.storyboard */,
 				87A6BF2B1CA040E200BF2AF7 /* Info.plist */,
 				87A6BF231CA040E200BF2AF7 /* KellyShop.xcdatamodeld */,
+				87F0A8591CA0FB0C0018B31E /* LoginController.swift */,
 			);
 			path = KellyShop;
 			sourceTree = "<group>";
@@ -128,6 +200,18 @@
 			path = KellyShopUITests;
 			sourceTree = "<group>";
 		};
+		87A6BF4D1CA0439500BF2AF7 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				87A6BF4E1CA0439C00BF2AF7 /* FileHelper.swift */,
+				87A6BF4F1CA0439C00BF2AF7 /* HttpDownloader.swift */,
+				87A6BF501CA0439C00BF2AF7 /* ImageHelper.swift */,
+				87A6BF511CA0439C00BF2AF7 /* Logger.swift */,
+				87A6BF561CA043E800BF2AF7 /* StringHelper.swift */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,9 +219,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 87A6BF441CA040E200BF2AF7 /* Build configuration list for PBXNativeTarget "KellyShop" */;
 			buildPhases = (
+				C4E720405E41895521888381 /* Check Pods Manifest.lock */,
 				87A6BF151CA040E200BF2AF7 /* Sources */,
 				87A6BF161CA040E200BF2AF7 /* Frameworks */,
 				87A6BF171CA040E200BF2AF7 /* Resources */,
+				B20A0F0E3B747E2B97474208 /* Embed Pods Frameworks */,
+				90763CB470A1D4D82E18DE4B /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -196,6 +283,7 @@
 				TargetAttributes = {
 					87A6BF181CA040E200BF2AF7 = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = WG75H77A6K;
 					};
 					87A6BF2F1CA040E200BF2AF7 = {
 						CreatedOnToolsVersion = 7.2;
@@ -254,14 +342,68 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		90763CB470A1D4D82E18DE4B /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KellyShop/Pods-KellyShop-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B20A0F0E3B747E2B97474208 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KellyShop/Pods-KellyShop-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C4E720405E41895521888381 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		87A6BF151CA040E200BF2AF7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				87A6BF251CA040E200BF2AF7 /* KellyShop.xcdatamodeld in Sources */,
+				87A6BF531CA0439C00BF2AF7 /* HttpDownloader.swift in Sources */,
 				87A6BF1F1CA040E200BF2AF7 /* ViewController.swift in Sources */,
 				87A6BF1D1CA040E200BF2AF7 /* AppDelegate.swift in Sources */,
+				87F0A85A1CA0FB0C0018B31E /* LoginController.swift in Sources */,
+				87A6BF571CA043E800BF2AF7 /* StringHelper.swift in Sources */,
+				87A6BF551CA0439C00BF2AF7 /* Logger.swift in Sources */,
+				87A6BF521CA0439C00BF2AF7 /* FileHelper.swift in Sources */,
+				87A6BF541CA0439C00BF2AF7 /* ImageHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -401,23 +543,41 @@
 		};
 		87A6BF451CA040E200BF2AF7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F592E5A1FFD80248252B233C /* Pods-KellyShop.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
+				);
 				INFOPLIST_FILE = KellyShop/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.luhonghai.KellyShop;
+				PRODUCT_BUNDLE_IDENTIFIER = com.luhonghai.kellyshop;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "KellyShop-Bridging-Header.h";
+				"SWIFT_OBJC_BRIDGING_HEADER[arch=*]" = "KellyShop-Bridging-Header.h";
 			};
 			name = Debug;
 		};
 		87A6BF461CA040E200BF2AF7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BE2E456AEF4D007D7235B2D8 /* Pods-KellyShop.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
+				);
 				INFOPLIST_FILE = KellyShop/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.luhonghai.KellyShop;
+				PRODUCT_BUNDLE_IDENTIFIER = com.luhonghai.kellyshop;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "KellyShop-Bridging-Header.h";
+				"SWIFT_OBJC_BRIDGING_HEADER[arch=*]" = "KellyShop-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -488,6 +648,7 @@
 				87A6BF461CA040E200BF2AF7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		87A6BF471CA040E200BF2AF7 /* Build configuration list for PBXNativeTarget "KellyShopTests" */ = {
 			isa = XCConfigurationList;
@@ -496,6 +657,7 @@
 				87A6BF491CA040E200BF2AF7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		87A6BF4A1CA040E200BF2AF7 /* Build configuration list for PBXNativeTarget "KellyShopUITests" */ = {
 			isa = XCConfigurationList;
@@ -504,6 +666,7 @@
 				87A6BF4C1CA040E200BF2AF7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
