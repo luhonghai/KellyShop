@@ -27,6 +27,10 @@ target 'KellyShop' do
     # We will also be using a few more pods too:
     # Easy UIViewController to display website
     pod 'TOWebViewController'
+    pod 'SCLAlertView'
+    pod 'SwiftSpinner'
+    pod 'NYTPhotoViewer', '~> 1.1.0'
+    pod 'UITextView+Placeholder'
 end
 
 target 'KellyShopTests' do

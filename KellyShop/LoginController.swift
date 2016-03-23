@@ -9,6 +9,8 @@
 import UIKit
 import FBSDKCoreKit
 import FBSDKLoginKit
+import TOWebViewController
+import SwiftSpinner
 
 class LoginController: UIViewController, FBSDKLoginButtonDelegate {
     
@@ -16,21 +18,31 @@ class LoginController: UIViewController, FBSDKLoginButtonDelegate {
     
     @IBOutlet weak var bgBottom: UIImageView!
     
+    let waitTime:Double = 1
+    
     override func viewDidLoad() {
         btnLogin.delegate = self
+        btnLogin.backgroundColor = UIColor.clearColor()
         btnLogin.publishPermissions = ["publish_actions"]
         btnLogin.readPermissions = ["public_profile", "email", "user_friends", "user_birthday"]
         //self.bgBottom.translatesAutoresizingMaskIntoConstraints = true
         self.bgBottom.layer.masksToBounds = true
         weak var weakSelf = self
+        
         if AccountManager.isLogin() {
             Logger.log("User is login")
+            dispatch_async(dispatch_get_main_queue(),{
+                SwiftSpinner.show("đang xác thực tài khoản, vui lòng chờ trong giây lát ...")
+            })
             AccountManager.fetch({ (status) -> Void in
-                if status {
-                    weakSelf!.gotoMainPage()
-                } else {
-                    //TODO show login error
-                }
+                delay(weakSelf!.waitTime, closure: {
+                    SwiftSpinner.hide()
+                    if status {
+                        weakSelf!.gotoMainPage()
+                    } else {
+                        //TODO show login error
+                    }
+                })
             })
             
         } else {
@@ -44,16 +56,29 @@ class LoginController: UIViewController, FBSDKLoginButtonDelegate {
 
     }
 
+    @IBAction func btnPrivacy(sender: AnyObject) {
+        let webview = TOWebViewController(URLString: "http://luhonghai.github.io/readme/jenny-shop/privacy-policy.html")
+        let padding: CGFloat = 30
+        webview.view.frame = CGRectMake(self.view.frame.origin.x + padding, self.view.frame.origin.y + padding, self.view.frame.width - padding  * 2, self.view.frame.height - padding * 2)
+        self.presentpopupViewController(webview, animationType: .Fade) { 
+            
+        }
+    }
     
     func loginButton(loginButton: FBSDKLoginButton!, didCompleteWithResult result: FBSDKLoginManagerLoginResult!, error: NSError!) {
         Logger.log("login facebook complete")
+        SwiftSpinner.show("đang xác thực tài khoản, vui lòng chờ trong giây lát ...")
         weak var weakSelf = self
         AccountManager.fetch({ (status) -> Void in
-            if status {
-                weakSelf!.gotoMainPage()
-            } else {
-                //TODO show login error
-            }
+            delay(weakSelf!.waitTime, closure: {
+                SwiftSpinner.hide()
+                if status {
+                    weakSelf!.gotoMainPage()
+                } else {
+                    //TODO show login error
+                }
+
+            })
         })
     }
     

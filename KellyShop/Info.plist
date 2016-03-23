@@ -32,7 +32,7 @@
 	<key>FacebookAppID</key>
 	<string>201079840263656</string>
 	<key>FacebookDisplayName</key>
-	<string>Kelly's shop</string>
+	<string>Kelly&apos;s shop</string>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
 		<string>fbapi</string>
@@ -65,6 +65,11 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
 </dict>

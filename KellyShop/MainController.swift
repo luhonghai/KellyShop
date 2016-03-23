@@ -12,7 +12,8 @@ import RDVTabBarController
 class TabBarItem {
     
     static let VALUES = [
-        TabBarItem(controller: "ProductMainController", selectedImage: "icon_shopping_bag.png", unselectedImage: "icon_shopping_bag_gray.png"),
+        TabBarItem(controller: "ProductMainController", selectedImage: "icon_search.png", unselectedImage: "icon_search_gray.png"),
+        TabBarItem(controller: "ProductEditorController", selectedImage: "icon_shopping_bag.png", unselectedImage: "icon_shopping_bag_gray.png"),
         TabBarItem(controller: "UserProfileController", selectedImage: "icon_profile.png", unselectedImage: "icon_profile_gray.png")
     ]
     

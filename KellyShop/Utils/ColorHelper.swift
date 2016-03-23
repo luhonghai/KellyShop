@@ -15,6 +15,8 @@ public class ColorHelper {
     
     static let APP_DEFAULT_GRAY = ColorHelper.colorWithHexString("#95d0b5")
     
+    static let APP_RED = ColorHelper.colorWithHexString("#cb2228")
+    
     class func colorWithHexString (hex:String) -> UIColor {
         var cString:String = hex.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet()).uppercaseString
         

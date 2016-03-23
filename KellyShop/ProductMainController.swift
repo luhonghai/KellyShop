@@ -14,8 +14,13 @@ class ProductMainController: RealmSearchViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
  
+        self.updateTableViewLayout()
+    }
+    
+    func updateTableViewLayout() {
         let inset = UIEdgeInsetsMake(20, 0, 0, 0)
         self.tableView.contentInset = inset
+        self.tableView.scrollIndicatorInsets = UIEdgeInsetsMake(self.searchBar.frame.height, 0,0,0)
         self.tableView.tableHeaderView?.backgroundColor = ColorHelper.APP_DEFAULT
         self.searchBar.backgroundColor = ColorHelper.APP_DEFAULT
         self.searchBar.barTintColor = ColorHelper.APP_DEFAULT
@@ -26,4 +31,5 @@ class ProductMainController: RealmSearchViewController {
         bgView.backgroundColor = ColorHelper.APP_DEFAULT
         self.tableView.backgroundView = bgView
     }
+    
 }

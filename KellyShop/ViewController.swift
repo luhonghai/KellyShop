@@ -19,6 +19,7 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate, ImagePickerDel
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         // Do any additional setup after loading the view, typically from a nib.
         let fbLogin = FBSDKLoginButton()
         fbLogin.publishPermissions = ["publish_actions"]
