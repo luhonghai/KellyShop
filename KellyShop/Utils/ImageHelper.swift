@@ -35,4 +35,39 @@ class ImageHelper {
         let masked = CGImageCreateWithMask(image.CGImage, mask)
         return UIImage(CGImage: masked!)
     }
+    
+    class func multiplyImageByConstantColor(image:UIImage,color:UIColor)->UIImage{
+        let backgroundSize = image.size
+        UIGraphicsBeginImageContext(backgroundSize)
+        
+        let ctx = UIGraphicsGetCurrentContext()
+        
+        var backgroundRect=CGRect()
+        backgroundRect.size = backgroundSize
+        backgroundRect.origin.x = 0
+        backgroundRect.origin.y = 0
+        let ciColor = CoreImage.CIColor(color: color)
+        let r = ciColor.red
+        let g = ciColor.green
+        let b = ciColor.blue
+        let a = ciColor.alpha
+        CGContextSetRGBFillColor(ctx, r, g, b, a)
+        CGContextFillRect(ctx, backgroundRect)
+        
+        var imageRect=CGRect()
+        imageRect.size = image.size
+        imageRect.origin.x = (backgroundSize.width - image.size.width)/2
+        imageRect.origin.y = (backgroundSize.height - image.size.height)/2
+        
+        // Unflip the image
+        CGContextTranslateCTM(ctx, 0, backgroundSize.height)
+        CGContextScaleCTM(ctx, 1.0, -1.0)
+        
+        CGContextSetBlendMode(ctx, .Multiply)
+        CGContextDrawImage(ctx, imageRect, image.CGImage)
+        
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return newImage
+    }
 }

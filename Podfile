@@ -22,6 +22,11 @@ target 'KellyShop' do
 #pod 'GoogleMaps'
     pod 'ImagePicker'
     pod 'RealmSwift'
+    pod 'RealmSearchViewController'
+    
+    # We will also be using a few more pods too:
+    # Easy UIViewController to display website
+    pod 'TOWebViewController'
 end
 
 target 'KellyShopTests' do

@@ -37,7 +37,6 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate, ImagePickerDel
     func requestProfile() {
         let graphRequest : FBSDKGraphRequest = FBSDKGraphRequest(graphPath: "me?fields=id,name,email,birthday", parameters: nil)
         graphRequest.startWithCompletionHandler({ (connection, result, error) -> Void in
-            
             if ((error) != nil) {
                 //Handle error
                 Logger.log(error)

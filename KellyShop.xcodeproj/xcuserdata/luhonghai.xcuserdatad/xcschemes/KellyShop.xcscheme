@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "87A6BF181CA040E200BF2AF7"
-               BuildableName = "KellyShop.app"
+               BuildableName = "Jenny&apos;s shop.app"
                BlueprintName = "KellyShop"
                ReferencedContainer = "container:KellyShop.xcodeproj">
             </BuildableReference>
@@ -53,7 +53,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "87A6BF181CA040E200BF2AF7"
-            BuildableName = "KellyShop.app"
+            BuildableName = "Jenny&apos;s shop.app"
             BlueprintName = "KellyShop"
             ReferencedContainer = "container:KellyShop.xcodeproj">
          </BuildableReference>
@@ -76,7 +76,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "87A6BF181CA040E200BF2AF7"
-            BuildableName = "KellyShop.app"
+            BuildableName = "Jenny&apos;s shop.app"
             BlueprintName = "KellyShop"
             ReferencedContainer = "container:KellyShop.xcodeproj">
          </BuildableReference>
@@ -95,7 +95,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "87A6BF181CA040E200BF2AF7"
-            BuildableName = "KellyShop.app"
+            BuildableName = "Jenny&apos;s shop.app"
             BlueprintName = "KellyShop"
             ReferencedContainer = "container:KellyShop.xcodeproj">
          </BuildableReference>
