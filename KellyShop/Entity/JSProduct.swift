@@ -12,9 +12,12 @@ import RealmSwift
 class JSProduct : Object {
     dynamic var id = ""
     dynamic var name = ""
-    dynamic var price = 0
+    dynamic var basePrice = 0
+    dynamic var transferPrice = 0
+    dynamic var sellPrice = 0
     dynamic var detail = ""
     dynamic var creator = ""
+    dynamic var search = ""
     dynamic var category: JSCategory?
     dynamic var createdDate = NSDate()
     let photos = List<JSProductPhoto>()

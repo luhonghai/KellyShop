@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8713F4341CA2AA8800D68B78 /* FLAnimatedImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8713F4311CA2AA8800D68B78 /* FLAnimatedImage.framework */; };
+		8713F4351CA2AA8800D68B78 /* NYTPhotoViewer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8713F4321CA2AA8800D68B78 /* NYTPhotoViewer.framework */; };
+		8713F4361CA2AA8800D68B78 /* UITextView_Placeholder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8713F4331CA2AA8800D68B78 /* UITextView_Placeholder.framework */; };
 		878B47941CA27167000C126F /* JSProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878B47931CA27167000C126F /* JSProduct.swift */; };
 		878B47961CA2719A000C126F /* JSCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878B47951CA2719A000C126F /* JSCategory.swift */; };
 		878B479A1CA27647000C126F /* JSProductStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878B47991CA27647000C126F /* JSProductStatus.swift */; };
@@ -122,6 +125,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8713F4311CA2AA8800D68B78 /* FLAnimatedImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FLAnimatedImage.framework; path = "../../Library/Developer/Xcode/DerivedData/KellyShop-flpzipbpjtnnnhfoxpetwcakefnt/Build/Products/Debug-iphonesimulator/FLAnimatedImage.framework"; sourceTree = "<group>"; };
+		8713F4321CA2AA8800D68B78 /* NYTPhotoViewer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NYTPhotoViewer.framework; path = "../../Library/Developer/Xcode/DerivedData/KellyShop-flpzipbpjtnnnhfoxpetwcakefnt/Build/Products/Debug-iphonesimulator/NYTPhotoViewer.framework"; sourceTree = "<group>"; };
+		8713F4331CA2AA8800D68B78 /* UITextView_Placeholder.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UITextView_Placeholder.framework; path = "../../Library/Developer/Xcode/DerivedData/KellyShop-flpzipbpjtnnnhfoxpetwcakefnt/Build/Products/Debug-iphonesimulator/UITextView_Placeholder.framework"; sourceTree = "<group>"; };
 		878B47931CA27167000C126F /* JSProduct.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JSProduct.swift; path = Entity/JSProduct.swift; sourceTree = "<group>"; };
 		878B47951CA2719A000C126F /* JSCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JSCategory.swift; path = Entity/JSCategory.swift; sourceTree = "<group>"; };
 		878B47991CA27647000C126F /* JSProductStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JSProductStatus.swift; path = Entity/JSProductStatus.swift; sourceTree = "<group>"; };
@@ -233,6 +239,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8713F4341CA2AA8800D68B78 /* FLAnimatedImage.framework in Frameworks */,
+				8713F4351CA2AA8800D68B78 /* NYTPhotoViewer.framework in Frameworks */,
+				8713F4361CA2AA8800D68B78 /* UITextView_Placeholder.framework in Frameworks */,
 				87B61E221CA2570400D04AE0 /* RBQFetchedResultsController.framework in Frameworks */,
 				87B61E231CA2570400D04AE0 /* RealmSearchViewController.framework in Frameworks */,
 				87B61E241CA2570400D04AE0 /* SCLAlertView.framework in Frameworks */,
@@ -280,6 +289,9 @@
 		27FCD74B4E26679CEC0F11C3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8713F4311CA2AA8800D68B78 /* FLAnimatedImage.framework */,
+				8713F4321CA2AA8800D68B78 /* NYTPhotoViewer.framework */,
+				8713F4331CA2AA8800D68B78 /* UITextView_Placeholder.framework */,
 				87B61E1D1CA2570400D04AE0 /* RBQFetchedResultsController.framework */,
 				87B61E1E1CA2570400D04AE0 /* RealmSearchViewController.framework */,
 				87B61E1F1CA2570400D04AE0 /* SCLAlertView.framework */,

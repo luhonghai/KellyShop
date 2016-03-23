@@ -29,7 +29,7 @@ class UserProfileController: UIViewController {
         imgAvatar.layer.cornerRadius = imgAvatar.frame.width / 2
         imgAvatar.layer.masksToBounds = true
         if !(AccountManager.current()?.avatar)!.isEmpty {
-            imgAvatar.load((AccountManager.current()?.avatar)!)
+            imgAvatar.load((AccountManager.current()?.avatar)!, placeholder: UIImage(named: "icon_profile.png"))
         }
         
         btnLogout.layer.cornerRadius = btnLogout.frame.height / 2

@@ -71,28 +71,28 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="next"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="giá sản phẩm" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3Jh-Wk-ghi">
-                                <rect key="frame" x="20" y="164" width="143" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="giá nhập" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3Jh-Wk-ghi">
+                                <rect key="frame" x="20" y="149" width="143" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="next"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                <connections>
+                                    <action selector="txtPriceValueChanged:" destination="ncv-bz-Fla" eventType="editingDidEnd" id="2UN-Bc-S14"/>
+                                </connections>
                             </textField>
                             <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="10000" stepValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="z47-YD-t63">
-                                <rect key="frame" x="261" y="165" width="94" height="29"/>
+                                <rect key="frame" x="261" y="150" width="94" height="29"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <action selector="stPriceValueChanged:" destination="ncv-bz-Fla" eventType="valueChanged" id="gf6-pU-Uxk"/>
+                                </connections>
                             </stepper>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="X3w-ec-zsx">
-                                <rect key="frame" x="20" y="220" width="335" height="138"/>
+                                <rect key="frame" x="20" y="284" width="335" height="93"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
                                 <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" address="YES"/>
                             </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="nghìn đồng" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CfA-LO-OLQ">
-                                <rect key="frame" x="166" y="169" width="87" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="F3p-bj-cRo">
                                 <rect key="frame" x="20" y="40" width="335" height="50"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -129,21 +129,110 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="nghìn đồng" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CfA-LO-OLQ">
+                                <rect key="frame" x="166" y="154" width="87" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="giá bán sỉ" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KR2-9u-4Sm">
+                                <rect key="frame" x="20" y="194" width="143" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="next"/>
+                                <connections>
+                                    <action selector="txtTransferPriceValueChanged:" destination="ncv-bz-Fla" eventType="editingDidEnd" id="fMs-BU-VZU"/>
+                                </connections>
+                            </textField>
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="10000" stepValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="XZP-P3-tiQ">
+                                <rect key="frame" x="261" y="195" width="94" height="29"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <action selector="stTransferValueChanged:" destination="ncv-bz-Fla" eventType="valueChanged" id="ALP-PP-TiS"/>
+                                </connections>
+                            </stepper>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="nghìn đồng" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WOR-14-LU8">
+                                <rect key="frame" x="166" y="199" width="87" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="giá bán lẻ" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XR7-iQ-dzK">
+                                <rect key="frame" x="20" y="237" width="143" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="next"/>
+                                <connections>
+                                    <action selector="txtSellPriceValueChanged:" destination="ncv-bz-Fla" eventType="editingDidEnd" id="LXj-Fh-QY8"/>
+                                </connections>
+                            </textField>
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="10000" stepValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="QnF-u4-AeW">
+                                <rect key="frame" x="261" y="238" width="94" height="29"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <action selector="stSellPriceValueChanged:" destination="ncv-bz-Fla" eventType="valueChanged" id="hst-Fd-2ko"/>
+                                </connections>
+                            </stepper>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="nghìn đồng" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FO9-o1-f8V">
+                                <rect key="frame" x="166" y="242" width="87" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="qF1-nP-jyQ">
+                                <rect key="frame" x="20" y="394" width="335" height="99"/>
+                                <color key="backgroundColor" red="0.58431372549019611" green="0.81568627450980391" blue="0.70980392156862748" alpha="1" colorSpace="calibratedRGB"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="R2A-EH-DWP">
+                                    <size key="itemSize" width="76" height="100"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="photoCell" id="BYU-Tz-gYs" customClass="PhotoCollectionCell" customModule="Jenny_s_shop" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="-1" width="76" height="100"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="76" height="100"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_camera.png" translatesAutoresizingMaskIntoConstraints="NO" id="CqT-NR-Hhj">
+                                                    <rect key="frame" x="8" y="8" width="61" height="85"/>
+                                                    <color key="backgroundColor" red="0.0039215686269999999" green="0.69803921570000005" blue="0.38431372549999998" alpha="1" colorSpace="calibratedRGB"/>
+                                                </imageView>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="CqT-NR-Hhj" firstAttribute="centerX" secondItem="BYU-Tz-gYs" secondAttribute="centerX" id="531-Dv-X2o"/>
+                                            <constraint firstItem="CqT-NR-Hhj" firstAttribute="width" secondItem="BYU-Tz-gYs" secondAttribute="width" constant="-15" id="Vhg-9w-kjs"/>
+                                            <constraint firstItem="CqT-NR-Hhj" firstAttribute="centerY" secondItem="BYU-Tz-gYs" secondAttribute="centerY" id="he3-Td-pHe"/>
+                                            <constraint firstItem="CqT-NR-Hhj" firstAttribute="height" secondItem="BYU-Tz-gYs" secondAttribute="height" constant="-15" id="qKj-0o-NC6"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="imageView" destination="CqT-NR-Hhj" id="Xjm-Bl-ykG"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
                         </subviews>
                         <color key="backgroundColor" red="0.0039215686274509803" green="0.69803921568627447" blue="0.38431372549019605" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="collectionCategory" destination="F3p-bj-cRo" id="Bch-uZ-YyE"/>
+                        <outlet property="collectionPhoto" destination="qF1-nP-jyQ" id="e2w-iN-fmp"/>
                         <outlet property="stepperPrice" destination="z47-YD-t63" id="DIs-ap-s08"/>
+                        <outlet property="stepperSellPrice" destination="QnF-u4-AeW" id="T6H-O0-y8l"/>
+                        <outlet property="stepperTransferPrice" destination="XZP-P3-tiQ" id="yQ2-gF-0gh"/>
                         <outlet property="txtDescription" destination="X3w-ec-zsx" id="N6z-FF-J9W"/>
                         <outlet property="txtName" destination="S1s-Wf-iHg" id="k2c-1i-xsJ"/>
                         <outlet property="txtPrice" destination="3Jh-Wk-ghi" id="Wy5-nM-iCk"/>
+                        <outlet property="txtSellPrice" destination="XR7-iQ-dzK" id="evH-Ce-r1H"/>
+                        <outlet property="txtTransferPrice" destination="KR2-9u-4Sm" id="lJT-4K-3NL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VRi-qx-qtp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="821.5" y="1543.5"/>
+            <point key="canvasLocation" x="821.5" y="1542.5"/>
         </scene>
         <!--Product Main Controller-->
         <scene sceneID="YOs-Ll-8wu">
@@ -171,6 +260,12 @@
                         </connections>
                     </tableView>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="entityName" value="JSProduct"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="searchPropertyKeyPath" value="search"/>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="sortAscending" value="NO"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="sortPropertyKey" value="createdDate"/>
+                    </userDefinedRuntimeAttributes>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hMw-za-WWy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -356,6 +451,7 @@
     <resources>
         <image name="bg_footer.jpg" width="3102" height="198"/>
         <image name="bg_login_top.png" width="1024" height="600"/>
+        <image name="icon_camera.png" width="512" height="512"/>
         <image name="icon_logout.png" width="128" height="128"/>
         <image name="icon_profile_large.png" width="512" height="512"/>
         <image name="single-logo-without-background.png" width="1024" height="1024"/>

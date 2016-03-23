@@ -11,6 +11,30 @@ import UIKit
 
 class ImageHelper {
     
+    static let kCacheDir = "image_cache"
+    
+    class func processImages(images: [UIImage]?, completion:(imagePaths: [String]) -> Void) {
+        if images == nil || images!.count == 0 {
+            dispatch_async(dispatch_get_main_queue()) {
+                completion(imagePaths: [])
+            }
+        } else {
+            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) {
+                var list = Array<String>()
+                FileHelper.getFilePath(kCacheDir, directory: true)
+                for index in 0...(images!.count-1) {
+                    let imagePath = FileHelper.getFilePath("\(kCacheDir)/\(index).jpg")
+                    UIImageJPEGRepresentation(images![index], 100)!.writeToFile(imagePath, atomically: true)
+                    list.append(imagePath)
+                }
+                dispatch_async(dispatch_get_main_queue()) {
+                    completion(imagePaths: list)
+                }
+            }
+        }
+        
+    }
+    
     class func imageWithImage(image:UIImage, scaledToSize newSize:CGSize) -> UIImage{
         UIGraphicsBeginImageContextWithOptions(newSize, false, 0.0);
         image.drawInRect(CGRectMake(0, 0, newSize.width, newSize.height))
