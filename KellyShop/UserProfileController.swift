@@ -10,7 +10,7 @@ import UIKit
 import FBSDKCoreKit
 import FBSDKLoginKit
 import ImageLoader
-import SCLAlertView
+import SCLAlertView_Objective_C
 
 class UserProfileController: UIViewController {
     
@@ -32,10 +32,8 @@ class UserProfileController: UIViewController {
             imgAvatar.load((AccountManager.current()?.avatar)!, placeholder: UIImage(named: "icon_profile.png"))
         }
         
-        btnLogout.layer.cornerRadius = btnLogout.frame.height / 2
+        btnLogout.layer.cornerRadius = kCornerRadius
         btnLogout.layer.masksToBounds = true
-        imgLogout.layer.cornerRadius = imgLogout.frame.width / 2
-        imgLogout.layer.masksToBounds = true
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -43,16 +41,22 @@ class UserProfileController: UIViewController {
     }
     
     @IBAction func doLogout(sender: AnyObject) {
-        let alert = SCLAlertView()
-        alert.addButton("đồng ý") {
+        let builder = SCLAlertViewBuilder().addButtonWithActionBlock("đồng ý", {
             Logger.log("user logout")
             let manager = FBSDKLoginManager()
             manager.logOut()
             AccountManager.logout()
             NSNotificationCenter.defaultCenter().postNotificationName("backToLogin", object: nil)
-        }
+        }).shouldDismissOnTapOutside(true)
+        let showBuilder = SCLAlertViewShowBuilder()
+            .style(.Custom)
+            .title("đăng xuất")
+            .subTitle("thoát khỏi tài khoản facebook ngay bây giờ?")
+            .color(ColorHelper.APP_RED)
+            .image(UIImage(named: "icon_logout_large.png"))
+            .closeButtonTitle("không")
     
-        alert.showInfo("đăng xuất", subTitle: "thoát khỏi tài khoản facebook ngay bây giờ?", closeButtonTitle: "không", duration: 0, colorStyle: 0xcb2228, colorTextButton: 0xffffff, circleIconImage: UIImage(named: "icon_logout_large.png"))
-    
+        
+        showBuilder.showAlertView(builder.alertView, onViewController: self)
     }
 }

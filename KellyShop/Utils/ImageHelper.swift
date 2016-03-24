@@ -8,12 +8,13 @@
 
 import Foundation
 import UIKit
+import QRCode
 
 class ImageHelper {
     
     static let kCacheDir = "image_cache"
     
-    class func processImages(images: [UIImage]?, completion:(imagePaths: [String]) -> Void) {
+    class func processImages(images: [UIImage]?, pid: String = "", completion:(imagePaths: [String]) -> Void) {
         if images == nil || images!.count == 0 {
             dispatch_async(dispatch_get_main_queue()) {
                 completion(imagePaths: [])
@@ -23,8 +24,13 @@ class ImageHelper {
                 var list = Array<String>()
                 FileHelper.getFilePath(kCacheDir, directory: true)
                 for index in 0...(images!.count-1) {
+                    var image = images![index]
+                    if !pid.isEmpty {
+                        image = generateWatermask(image, pid: pid)
+                    }
+                    
                     let imagePath = FileHelper.getFilePath("\(kCacheDir)/\(index).jpg")
-                    UIImageJPEGRepresentation(images![index], 100)!.writeToFile(imagePath, atomically: true)
+                    UIImageJPEGRepresentation(image, 100)!.writeToFile(imagePath, atomically: true)
                     list.append(imagePath)
                 }
                 dispatch_async(dispatch_get_main_queue()) {
@@ -33,6 +39,77 @@ class ImageHelper {
             }
         }
         
+    }
+    
+    class func generateWatermask(image: UIImage!, pid: String) -> UIImage {
+        let imageView = UIImageView(image: image)
+        let size = min(imageView.frame.width, imageView.frame.height)
+        // Have photo ID. try to generate QR code
+        var qrcode = QRCode(pid)
+        qrcode?.color = CIColor(color: ColorHelper.APP_DEFAULT)
+        let qrCodeWidth = size / 5
+        qrcode?.size = CGSize(width: qrCodeWidth, height: qrCodeWidth)
+        let imgQrCode = UIImageView(image: qrcode?.image)
+        imageView.addSubview(imgQrCode)
+        let strokeTextAttributes = [
+            NSStrokeColorAttributeName : ColorHelper.APP_DEFAULT,
+            NSForegroundColorAttributeName : UIColor.whiteColor(),
+            NSStrokeWidthAttributeName : -2.0,
+            ]
+        // Add product code
+        let lblCode = LabelWithAdaptiveTextHeight()
+        let lblCodeHeight = qrCodeWidth / 2
+        lblCode.frame = CGRectMake(qrCodeWidth + 10, 10, imageView.frame.width - (qrCodeWidth + 10), lblCodeHeight)
+        lblCode.adjustsFontSizeToFitWidth = true
+        lblCode.textAlignment = NSTextAlignment.Left
+        lblCode.attributedText = NSAttributedString(string:  "Mã: \(pid)", attributes: strokeTextAttributes)
+        imageView.addSubview(lblCode)
+        
+        // Add shop logo at top
+        let logoTopSize = 2 * qrCodeWidth / 3
+        let imgLogoTop = UIImageView(image: imageWithImage(image: UIImage(named: "single-logo-without-background.png")!, w: logoTopSize, h: logoTopSize))
+        imgLogoTop.backgroundColor = UIColor.clearColor()
+        imgLogoTop.frame = CGRectMake(imageView.frame.width - logoTopSize, 0, logoTopSize, logoTopSize)
+        imageView.addSubview(imgLogoTop)
+        
+        // Add shop facebook address
+        let lblFacebook = LabelWithAdaptiveTextHeight()
+        let lblFacebookHeight = qrCodeWidth / 4
+        lblFacebook.frame = CGRectMake(qrCodeWidth + 10,lblCode.frame.origin.y + lblCode.frame.height  + 10, imageView.frame.width - (qrCodeWidth + 10), lblFacebookHeight)
+        lblFacebook.adjustsFontSizeToFitWidth = true
+        lblFacebook.textAlignment = NSTextAlignment.Left
+        lblFacebook.attributedText = NSAttributedString(string:  "facebook.com/lovely.jenny.shop", attributes: strokeTextAttributes)
+        imageView.addSubview(lblFacebook)
+        
+        
+        
+        
+        // Add shop logo overlay
+        let logoWidth = 2 * size / 3
+        let imgLogo = UIImageView(image: imageWithImage(image: UIImage(named: "single-logo-without-background.png")!, w: logoWidth, h: logoWidth))
+        imgLogo.backgroundColor = UIColor.clearColor()
+        imgLogo.center = imageView.center
+        imgLogo.alpha = 0.2
+        imageView.addSubview(imgLogo)
+        
+        
+        
+        // Add phone
+        let lblPhone = LabelWithAdaptiveTextHeight()
+        let phoneHeight = size / 18
+        lblPhone.frame = CGRectMake(0, imageView.frame.height - phoneHeight, imageView.frame.width, phoneHeight)
+        lblPhone.adjustsFontSizeToFitWidth = true
+        lblPhone.textColor = UIColor.whiteColor()
+        lblPhone.textAlignment = NSTextAlignment.Center
+        lblPhone.attributedText = NSAttributedString(string:  "liên hệ 01688.084.099 - 0913.998.692", attributes: strokeTextAttributes)
+        imageView.addSubview(lblPhone)
+        
+        
+        UIGraphicsBeginImageContext(imageView.frame.size)
+        imageView.layer.renderInContext(UIGraphicsGetCurrentContext()!)
+        let resultImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return resultImage
     }
     
     class func imageWithImage(image:UIImage, scaledToSize newSize:CGSize) -> UIImage{
@@ -49,15 +126,14 @@ class ImageHelper {
     }
     
     class func maskImage(image: UIImage, maskImage: UIImage) -> UIImage {
-        let maskRef = maskImage.CGImage;
-        let mask = CGImageMaskCreate(CGImageGetWidth(maskRef),
-        CGImageGetHeight(maskRef),
-        CGImageGetBitsPerComponent(maskRef),
-        CGImageGetBitsPerPixel(maskRef),
-        CGImageGetBytesPerRow(maskRef),
-        CGImageGetDataProvider(maskRef), nil, false)
-        let masked = CGImageCreateWithMask(image.CGImage, mask)
-        return UIImage(CGImage: masked!)
+        let imageView = UIImageView(image: image)
+        let maskImageView = UIImageView(image: maskImage)
+        imageView.addSubview(maskImageView)
+        UIGraphicsBeginImageContext(imageView.frame.size)
+        imageView.layer.renderInContext(UIGraphicsGetCurrentContext()!)
+        let resultImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return resultImage
     }
     
     class func multiplyImageByConstantColor(image:UIImage,color:UIColor)->UIImage{

@@ -27,10 +27,13 @@ target 'KellyShop' do
     # We will also be using a few more pods too:
     # Easy UIViewController to display website
     pod 'TOWebViewController'
-    pod 'SCLAlertView'
+    pod 'SCLAlertView-Objective-C'
     pod 'SwiftSpinner'
     pod 'NYTPhotoViewer', '~> 1.1.0'
     pod 'UITextView+Placeholder'
+    pod 'RAReorderableLayout'
+    pod 'QRCode', '~> 0.5'
+    pod 'QRCodeReader.swift', '~> 6.0.0'
 end
 
 target 'KellyShopTests' do

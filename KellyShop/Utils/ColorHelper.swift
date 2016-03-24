@@ -13,11 +13,21 @@ public class ColorHelper {
     
     static let APP_DEFAULT = ColorHelper.colorWithHexString("#01b262")
     
+    static let APP_DEFAULT_HEX:UInt = 0x01b262
+    
     static let APP_DEFAULT_GRAY = ColorHelper.colorWithHexString("#95d0b5")
+    
+    static let APP_DEFAULT_GRAY_HEX:UInt = 0x95d0b5
     
     static let APP_RED = ColorHelper.colorWithHexString("#cb2228")
     
+    static let APP_RED_HEX:UInt = 0xcb2228
+    
     static let APP_BLUE = ColorHelper.colorWithHexString("#00b4eb")
+    
+    static let APP_BLUE_HEX:UInt = 0x00b4eb
+    
+    static let APP_WHITE_HEX:UInt = 0xffffff
     
     class func colorWithHexString (hex:String) -> UIColor {
         var cString:String = hex.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet()).uppercaseString

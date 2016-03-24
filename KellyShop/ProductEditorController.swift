@@ -12,10 +12,10 @@ import RealmSwift
 import ImagePicker
 import SwiftSpinner
 import NYTPhotoViewer
+import RAReorderableLayout
+import SCLAlertView_Objective_C
 
-class ProductEditorController: UIViewController, UICollectionViewDelegate, ImagePickerDelegate {
-    
-    let kCornerRadius:CGFloat = 5
+class ProductEditorController: UIViewController, UICollectionViewDelegate, ImagePickerDelegate, RAReorderableLayoutDelegate, UITextFieldDelegate {
     
     @IBOutlet weak var txtDescription: UITextView!
     
@@ -37,7 +37,13 @@ class ProductEditorController: UIViewController, UICollectionViewDelegate, Image
     
     @IBOutlet weak var collectionPhoto: UICollectionView!
     
-    var realm: Realm!
+    @IBOutlet weak var imgChooseImage: UIImageView!
+    
+    @IBOutlet weak var viewActionContainer: UIView!
+    
+    @IBOutlet weak var btnSaveShare: UIView!
+    
+    @IBOutlet weak var btnRefresh: UIView!
     
     var categoryDataSource: CategoryCollectionDataSource!
     
@@ -47,10 +53,9 @@ class ProductEditorController: UIViewController, UICollectionViewDelegate, Image
     
     override func viewDidLoad() {
         initLayout()
-        realm = try! Realm()
         initCollectionViews()
-        updatePlaceHolder()
         product = JSProduct()
+        updatePlaceHolder()
     }
 }
 
@@ -59,6 +64,93 @@ class ProductEditorController: UIViewController, UICollectionViewDelegate, Image
  */
 extension ProductEditorController {
     
+    func changeCategory() {
+        product?.creator = AccountManager.current()!.id
+        let category = categoryDataSource.selectedCategory
+        let counter = category.counter + 1
+        product?.id = "\(category.code)\(counter)"
+        Logger.log("product id \(product?.id)")
+    }
+    
+    func refreshForm() {
+        product = JSProduct()
+        txtName.text = ""
+        txtDescription.text = ""
+        txtPrice.text = ""
+        txtTransferPrice.text = ""
+        txtSellPrice.text = ""
+        stepperPrice.value = 0
+        stepperSellPrice.value = 0
+        stepperTransferPrice.value = 0
+        photoDataSource.photos = []
+        collectionPhoto.reloadData()
+        changeCategory()
+    }
+    
+    func saveAndShare() {
+        weak var weakSelf = self
+        weakSelf!.saveProduct()
+        weakSelf!.refreshForm()
+    }
+    
+    func saveProduct() {
+        product?.name = txtName.text!
+        product?.detail = txtDescription.text!
+        FileHelper.getFilePath("photos", directory: true)
+        if photoDataSource.photos?.count > 0 {
+            for photo in photoDataSource.photos! {
+                let destPath = "photos/\(NSUUID().UUIDString)"
+                FileHelper.copyFile(photo.localPath, toPath: FileHelper.getFilePath(destPath))
+                photo.localPath = destPath
+                product?.photos.append(photo)
+            }
+        }
+        product?.search = "\(product?.name), \(product?.basePrice)k, \(product?.sellPrice)k, \(product?.transferPrice)k, \(product?.id), \(product?.detail), \(product?.category?.code), \(product?.category?.name), \(product?.category?.name), \(AccountManager.current()?.name)"
+        let realm = try! Realm()
+        try! realm.write({
+            categoryDataSource.selectedCategory.counter += 1
+            product?.category = categoryDataSource.selectedCategory
+            realm.add(product!)
+        })
+    }
+    
+    @IBAction func tapRefresh(sender: UITapGestureRecognizer) {
+        let builder = SCLAlertViewBuilder().addButtonWithActionBlock("đồng ý", {
+                self.refreshForm()
+            }).shouldDismissOnTapOutside(true)
+        let showBuilder = SCLAlertViewShowBuilder()
+            .style(.Custom)
+            .title("làm lại")
+            .subTitle("xóa toàn bộ thông tin đã nhập")
+            .color(ColorHelper.APP_RED)
+            .image(UIImage(named: "icon_refresh_large.png"))
+            .closeButtonTitle("không")
+        
+        showBuilder.showAlertView(builder.alertView, onViewController: self)
+    }
+    
+    
+    @IBAction func tapSaveShare(sender: UITapGestureRecognizer) {
+        let builder = SCLAlertViewBuilder()
+            .addButtonWithActionBlock("lưu và chia sẻ", {
+                 self.saveAndShare()
+            })
+            .addButtonWithActionBlock("chỉ lưu", {
+                weak var weakSelf = self
+                weakSelf!.saveProduct()
+                weakSelf!.refreshForm()
+            })
+            .shouldDismissOnTapOutside(true)
+        let showBuilder = SCLAlertViewShowBuilder()
+            .style(.Custom)
+            .title("lưu \(self.categoryDataSource.selectedCategory.name.lowercaseString)")
+            .subTitle("tùy chọn lưu lại và chia sẻ hoặc chia sẻ sau")
+            .color(ColorHelper.APP_BLUE)
+            .image(UIImage(named: "icon_check_large.png"))
+            .closeButtonTitle("không")
+        
+        showBuilder.showAlertView(builder.alertView, onViewController: self)
+    }
 }
 
 /**
@@ -68,11 +160,23 @@ extension ProductEditorController {
     func initLayout() {
         txtDescription.layer.cornerRadius = kCornerRadius
         collectionPhoto.layer.cornerRadius = kCornerRadius
+        btnRefresh.layer.cornerRadius = kCornerRadius
+        btnSaveShare.layer.cornerRadius = kCornerRadius
+        viewActionContainer.layer.cornerRadius = kCornerRadius
+        imgChooseImage.layer.cornerRadius = kCornerRadius
+        imgChooseImage.userInteractionEnabled = true
+        
+        txtName.delegate = self
+        txtPrice.delegate = self
+        txtSellPrice.delegate = self
+        txtTransferPrice.delegate = self
+        
     }
     func updatePlaceHolder() {
         let categoryName = categoryDataSource.selectedCategory.name.lowercaseString
         txtDescription.placeholder = "mô tả thêm về \(categoryName)"
         txtName.placeholder = "tên \(categoryName)"
+        changeCategory()
     }
 }
 
@@ -168,6 +272,7 @@ extension ProductEditorController {
     
     func initCollectionViews() {
         categoryDataSource = CategoryCollectionDataSource()
+        let realm = try! Realm()
         categoryDataSource.categories = realm.objects(JSCategory)
         categoryDataSource.setSelected(0)
         collectionCategory.dataSource = categoryDataSource
@@ -175,11 +280,11 @@ extension ProductEditorController {
         collectionCategory.tag = CollectionType.Category.hashValue
         
         photoDataSource = PhotoCollectionDataSource()
-        photoDataSource.kCornerRadius = kCornerRadius
         
         collectionPhoto.dataSource = photoDataSource
         collectionPhoto.delegate = self
         collectionPhoto.tag = CollectionType.Photo.hashValue
+        (self.collectionPhoto.collectionViewLayout as! RAReorderableLayout).scrollDirection = .Horizontal
     }
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath)
@@ -193,11 +298,6 @@ extension ProductEditorController {
             updatePlaceHolder()
             break
         case CollectionType.Photo.hashValue:
-            if row == 0 {
-                let imagePickerController = ImagePickerController()
-                imagePickerController.delegate = self
-                presentViewController(imagePickerController, animated: true, completion: nil)
-            } else {
                 var nytPhotos = Array<NYTPhoto>()
                 for index in 0...(photoDataSource.photos!.count - 1) {
                     let photo = photoDataSource.photos![index]
@@ -206,21 +306,22 @@ extension ProductEditorController {
                     nytPhotos.append(photoPreview)
                 }
                 let photoViewer = NYTPhotosViewController(photos: nytPhotos)
-//                let padding:CGFloat = 10
-//                let rect = self.view.frame
-//                photoViewer.view.frame = CGRectMake(rect.origin.x + padding, rect.origin.y + padding, rect.width - padding * 2, rect.height - padding * 2)
-//                self.presentpopupViewController(photoViewer, animationType: .Fade, completion: {
-//                    
-//                })
                 self.presentViewController(photoViewer, animated: true, completion: {
                     
                 })
-                photoViewer.displayPhoto(nytPhotos[row - 1], animated: false)
-            }
+                photoViewer.displayPhoto(nytPhotos[row], animated: false)
+            
             break
         default:
             break
         }
+    }
+    
+    @IBAction func tapChooseImage(sender: UITapGestureRecognizer) {
+        Logger.log("choose images")
+        let imagePickerController = ImagePickerController()
+        imagePickerController.delegate = self
+        presentViewController(imagePickerController, animated: true, completion: nil)
     }
     
     func collectionView(collectionView: UICollectionView,
@@ -247,6 +348,24 @@ extension ProductEditorController {
             return UIEdgeInsetsMake(0, 0, 0, 0)
         }
     }
+    
+    func collectionView(collectionView: UICollectionView, atIndexPath: NSIndexPath, didMoveToIndexPath toIndexPath: NSIndexPath) {
+        let photo = self.photoDataSource.photos?.removeAtIndex(atIndexPath.item)
+        self.photoDataSource.photos?.insert(photo!, atIndex: toIndexPath.item)
+    }
+    
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+        switch collectionView.tag {
+        case CollectionType.Photo.hashValue:
+            let height = collectionView.frame.height
+            let width = height * 62 / 88
+            return CGSizeMake(width, height)
+        default:
+            
+            return (collectionViewLayout as! UICollectionViewFlowLayout).itemSize
+        }
+        
+    }
 
 }
 
@@ -266,7 +385,7 @@ extension ProductEditorController {
         if images.count > 0 {
             SwiftSpinner.show("đang xử lý ảnh ...", animated: true)
             weak var weakSelf = self
-            ImageHelper.processImages(images) { (imagePaths) in
+            ImageHelper.processImages(images, pid: (product?.id)!) { (imagePaths) in
                 weakSelf!.photoDataSource.photos = []
                 if imagePaths.count > 0 {
                     for imagePath in imagePaths {
@@ -288,18 +407,46 @@ extension ProductEditorController {
         collectionPhoto.reloadData()
     }
 }
+/**
+ keyboard control
+ */
+extension ProductEditorController {
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        switch textField {
+        case txtName:
+            txtPrice.becomeFirstResponder()
+            return true
+        case txtPrice:
+            txtDescription.becomeFirstResponder()
+            return true
+        default:
+            return true
+        }
+    }
+}
 
-class PhotoCollectionDataSource: NSObject, UICollectionViewDataSource {
+class PhotoCollectionDataSource: NSObject, RAReorderableLayoutDataSource {
     var photos: Array<JSProductPhoto>?
-    var kCornerRadius:CGFloat = 0
     
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if photos == nil {
-            return 1
+            return 0
         } else {
-            return (photos?.count)! + 1
+            return (photos?.count)!
         }
+    }
+    
+    func collectionView(collectionView: UICollectionView, reorderingItemAlphaInSection section: Int) -> CGFloat {
+        return 0.9
+    }
+    
+    func scrollSpeedValueInCollectionView(collectionView: UICollectionView) -> CGFloat {
+        return 15
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
@@ -307,17 +454,15 @@ class PhotoCollectionDataSource: NSObject, UICollectionViewDataSource {
         let index = indexPath.row
         cell.imageView.layer.cornerRadius = kCornerRadius
         cell.imageView.clipsToBounds = true
-        if index == 0 {
-            cell.imageView.backgroundColor = ColorHelper.APP_DEFAULT
-            cell.imageView.image = UIImage(named: "icon_camera.png")
-        } else if let photo = photos?[index - 1] {
+        if let photo = photos?[index] {
             cell.imageView.backgroundColor = UIColor.whiteColor()
-            Logger.log("Load photo index \(index - 1) path \(photo.localPath)")
+            Logger.log("Load photo index \(index) path \(photo.localPath)")
             cell.imageView.image = UIImage(contentsOfFile: photo.localPath)
         }
         
         return cell
     }
+    
 }
 
 class CategoryCollectionDataSource: NSObject, UICollectionViewDataSource {
