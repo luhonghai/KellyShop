@@ -14,6 +14,10 @@ import SwiftSpinner
 import NYTPhotoViewer
 import RAReorderableLayout
 import SCLAlertView_Objective_C
+import BSImagePicker
+import BSGridCollectionViewLayout
+import Photos
+
 
 class ProductEditorController: UIViewController, UICollectionViewDelegate, ImagePickerDelegate, RAReorderableLayoutDelegate, UITextFieldDelegate {
     
@@ -38,6 +42,8 @@ class ProductEditorController: UIViewController, UICollectionViewDelegate, Image
     @IBOutlet weak var collectionPhoto: UICollectionView!
     
     @IBOutlet weak var imgChooseImage: UIImageView!
+    
+    @IBOutlet weak var imgChooseImageGallery: UIImageView!
     
     @IBOutlet weak var viewActionContainer: UIView!
     
@@ -165,7 +171,8 @@ extension ProductEditorController {
         viewActionContainer.layer.cornerRadius = kCornerRadius
         imgChooseImage.layer.cornerRadius = kCornerRadius
         imgChooseImage.userInteractionEnabled = true
-        
+        imgChooseImageGallery.layer.cornerRadius = kCornerRadius
+        imgChooseImageGallery.userInteractionEnabled = true
         txtName.delegate = self
         txtPrice.delegate = self
         txtSellPrice.delegate = self
@@ -324,6 +331,39 @@ extension ProductEditorController {
         presentViewController(imagePickerController, animated: true, completion: nil)
     }
     
+    @IBAction func tapChooseImageGallery(sender: UITapGestureRecognizer) {
+        Logger.log("choose image gallery")
+        let imagePickerController = BSImagePickerViewController()
+        weak var weakSelf = self
+        bs_presentImagePickerController(imagePickerController, animated: true, select: { (asset: PHAsset) -> Void in
+            
+            }, deselect: { (asset: PHAsset) -> Void in
+                
+            }, cancel: { (assets: [PHAsset]) -> Void in
+                Logger.log("cancel image picker")
+            }, finish: { (assets: [PHAsset]) -> Void in
+                Logger.log("finish image picker. Image count \(assets.count)")
+                var images = Array<UIImage>()
+                if assets.count > 0 {
+                    let manager = PHImageManager.defaultManager()
+                    let option = PHImageRequestOptions()
+                    option.deliveryMode = PHImageRequestOptionsDeliveryMode.FastFormat
+                    for asset in assets {manager.requestImageDataForAsset(asset, options: option, resultHandler: { (data, string, orentation, _:[NSObject : AnyObject]?) in
+                            images.append(UIImage(data: data!)!)
+                            if images.count == assets.count {
+                                weakSelf!.chooseImages(images)
+                            }
+                        })
+                    }
+                }
+                
+                
+            }) { 
+                
+        }
+    }
+    
+    
     func collectionView(collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                                insetForSectionAtIndex section: Int) -> UIEdgeInsets {
@@ -382,6 +422,10 @@ extension ProductEditorController {
         self.dismissViewControllerAnimated(true) { () -> Void in
             
         }
+        chooseImages(images)
+    }
+    
+    func chooseImages(images: [UIImage]) {
         if images.count > 0 {
             SwiftSpinner.show("đang xử lý ảnh ...", animated: true)
             weak var weakSelf = self

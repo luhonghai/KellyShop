@@ -181,45 +181,6 @@
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vlg-Kl-7Or">
                                 <rect key="frame" x="20" y="441" width="335" height="169"/>
                                 <subviews>
-                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="qF1-nP-jyQ">
-                                        <rect key="frame" x="78" y="13" width="249" height="99"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        <collectionViewLayout key="collectionViewLayout" id="8ee-Jh-XIl" customClass="RAReorderableLayout" customModule="RAReorderableLayout"/>
-                                        <cells>
-                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" reuseIdentifier="photoCell" id="BYU-Tz-gYs" customClass="PhotoCollectionCell" customModule="Jenny_s_shop" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_camera.png" translatesAutoresizingMaskIntoConstraints="NO" id="CqT-NR-Hhj">
-                                                            <rect key="frame" x="8" y="8" width="35" height="35"/>
-                                                            <color key="backgroundColor" red="0.0039215686269999999" green="0.69803921570000005" blue="0.38431372549999998" alpha="1" colorSpace="calibratedRGB"/>
-                                                        </imageView>
-                                                    </subviews>
-                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                </view>
-                                                <constraints>
-                                                    <constraint firstItem="CqT-NR-Hhj" firstAttribute="centerX" secondItem="BYU-Tz-gYs" secondAttribute="centerX" id="531-Dv-X2o"/>
-                                                    <constraint firstItem="CqT-NR-Hhj" firstAttribute="width" secondItem="BYU-Tz-gYs" secondAttribute="width" constant="-15" id="Vhg-9w-kjs"/>
-                                                    <constraint firstItem="CqT-NR-Hhj" firstAttribute="centerY" secondItem="BYU-Tz-gYs" secondAttribute="centerY" id="he3-Td-pHe"/>
-                                                    <constraint firstItem="CqT-NR-Hhj" firstAttribute="height" secondItem="BYU-Tz-gYs" secondAttribute="height" constant="-15" id="qKj-0o-NC6"/>
-                                                </constraints>
-                                                <connections>
-                                                    <outlet property="imageView" destination="CqT-NR-Hhj" id="Xjm-Bl-ykG"/>
-                                                </connections>
-                                            </collectionViewCell>
-                                        </cells>
-                                    </collectionView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon_camera.png" translatesAutoresizingMaskIntoConstraints="NO" id="JaS-tC-e3a">
-                                        <rect key="frame" x="8" y="20" width="62" height="86"/>
-                                        <color key="backgroundColor" red="0.0039215686269999999" green="0.69803921570000005" blue="0.38431372549999998" alpha="1" colorSpace="calibratedRGB"/>
-                                        <gestureRecognizers/>
-                                        <connections>
-                                            <outletCollection property="gestureRecognizers" destination="IkE-cb-eBA" appends="YES" id="JVu-g7-76A"/>
-                                        </connections>
-                                    </imageView>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Tgn-bP-GTv">
                                         <rect key="frame" x="140" y="122" width="187" height="39"/>
                                         <subviews>
@@ -260,6 +221,53 @@
                                             <outletCollection property="gestureRecognizers" destination="XV5-Jw-Dkk" appends="YES" id="5p4-Yn-07z"/>
                                         </connections>
                                     </view>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon_gallery.png" translatesAutoresizingMaskIntoConstraints="NO" id="0sy-E1-4PO">
+                                        <rect key="frame" x="8" y="66" width="48" height="48"/>
+                                        <color key="backgroundColor" red="0.0039215686269999999" green="0.69803921570000005" blue="0.38431372549999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <gestureRecognizers/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="Wyv-Rk-MOS" appends="YES" id="hgB-ri-kim"/>
+                                        </connections>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon_camera.png" translatesAutoresizingMaskIntoConstraints="NO" id="JaS-tC-e3a">
+                                        <rect key="frame" x="8" y="8" width="48" height="48"/>
+                                        <color key="backgroundColor" red="0.0039215686269999999" green="0.69803921570000005" blue="0.38431372549999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <gestureRecognizers/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="IkE-cb-eBA" appends="YES" id="JVu-g7-76A"/>
+                                        </connections>
+                                    </imageView>
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="qF1-nP-jyQ">
+                                        <rect key="frame" x="64" y="8" width="263" height="104"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <collectionViewLayout key="collectionViewLayout" id="8ee-Jh-XIl" customClass="RAReorderableLayout" customModule="RAReorderableLayout"/>
+                                        <cells>
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" reuseIdentifier="photoCell" id="BYU-Tz-gYs" customClass="PhotoCollectionCell" customModule="Jenny_s_shop" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_camera.png" translatesAutoresizingMaskIntoConstraints="NO" id="CqT-NR-Hhj">
+                                                            <rect key="frame" x="8" y="8" width="35" height="35"/>
+                                                            <color key="backgroundColor" red="0.0039215686269999999" green="0.69803921570000005" blue="0.38431372549999998" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </imageView>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                </view>
+                                                <constraints>
+                                                    <constraint firstItem="CqT-NR-Hhj" firstAttribute="centerX" secondItem="BYU-Tz-gYs" secondAttribute="centerX" id="531-Dv-X2o"/>
+                                                    <constraint firstItem="CqT-NR-Hhj" firstAttribute="width" secondItem="BYU-Tz-gYs" secondAttribute="width" constant="-15" id="Vhg-9w-kjs"/>
+                                                    <constraint firstItem="CqT-NR-Hhj" firstAttribute="centerY" secondItem="BYU-Tz-gYs" secondAttribute="centerY" id="he3-Td-pHe"/>
+                                                    <constraint firstItem="CqT-NR-Hhj" firstAttribute="height" secondItem="BYU-Tz-gYs" secondAttribute="height" constant="-15" id="qKj-0o-NC6"/>
+                                                </constraints>
+                                                <connections>
+                                                    <outlet property="imageView" destination="CqT-NR-Hhj" id="Xjm-Bl-ykG"/>
+                                                </connections>
+                                            </collectionViewCell>
+                                        </cells>
+                                    </collectionView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.58431372550000005" green="0.81568627449999997" blue="0.70980392160000005" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
@@ -273,6 +281,7 @@
                         <outlet property="collectionCategory" destination="F3p-bj-cRo" id="Bch-uZ-YyE"/>
                         <outlet property="collectionPhoto" destination="qF1-nP-jyQ" id="e2w-iN-fmp"/>
                         <outlet property="imgChooseImage" destination="JaS-tC-e3a" id="JUc-dR-8Hm"/>
+                        <outlet property="imgChooseImageGallery" destination="0sy-E1-4PO" id="rU3-VG-UPA"/>
                         <outlet property="stepperPrice" destination="z47-YD-t63" id="DIs-ap-s08"/>
                         <outlet property="stepperSellPrice" destination="QnF-u4-AeW" id="T6H-O0-y8l"/>
                         <outlet property="stepperTransferPrice" destination="XZP-P3-tiQ" id="yQ2-gF-0gh"/>
@@ -298,6 +307,11 @@
                 <tapGestureRecognizer id="2yO-M9-tpz">
                     <connections>
                         <action selector="tapSaveShare:" destination="ncv-bz-Fla" id="xEv-n3-7ul"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="Wyv-Rk-MOS">
+                    <connections>
+                        <action selector="tapChooseImageGallery:" destination="ncv-bz-Fla" id="ZYM-Je-4lz"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
@@ -561,6 +575,7 @@
         <image name="bg_login_top.png" width="1024" height="600"/>
         <image name="icon_camera.png" width="512" height="512"/>
         <image name="icon_check.png" width="128" height="128"/>
+        <image name="icon_gallery.png" width="128" height="128"/>
         <image name="icon_logout.png" width="128" height="128"/>
         <image name="icon_profile_large.png" width="512" height="512"/>
         <image name="icon_refresh.png" width="128" height="128"/>

@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		87076E4E1CA4DB1600154A8A /* BSGridCollectionViewLayout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87076E4B1CA4DB1600154A8A /* BSGridCollectionViewLayout.framework */; };
+		87076E4F1CA4DB1600154A8A /* BSImagePicker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87076E4C1CA4DB1600154A8A /* BSImagePicker.framework */; };
+		87076E501CA4DB1600154A8A /* UIImageViewModeScaleAspect.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87076E4D1CA4DB1600154A8A /* UIImageViewModeScaleAspect.framework */; };
+		87076E521CA4DCB200154A8A /* icon_gallery.png in Resources */ = {isa = PBXBuildFile; fileRef = 87076E511CA4DCB200154A8A /* icon_gallery.png */; };
 		8713F4341CA2AA8800D68B78 /* FLAnimatedImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8713F4311CA2AA8800D68B78 /* FLAnimatedImage.framework */; };
 		8713F4351CA2AA8800D68B78 /* NYTPhotoViewer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8713F4321CA2AA8800D68B78 /* NYTPhotoViewer.framework */; };
 		8713F4361CA2AA8800D68B78 /* UITextView_Placeholder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8713F4331CA2AA8800D68B78 /* UITextView_Placeholder.framework */; };
@@ -164,6 +168,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		87076E4B1CA4DB1600154A8A /* BSGridCollectionViewLayout.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BSGridCollectionViewLayout.framework; path = "../../Library/Developer/Xcode/DerivedData/KellyShop-flpzipbpjtnnnhfoxpetwcakefnt/Build/Products/Debug-iphoneos/BSGridCollectionViewLayout.framework"; sourceTree = "<group>"; };
+		87076E4C1CA4DB1600154A8A /* BSImagePicker.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BSImagePicker.framework; path = "../../Library/Developer/Xcode/DerivedData/KellyShop-flpzipbpjtnnnhfoxpetwcakefnt/Build/Products/Debug-iphoneos/BSImagePicker.framework"; sourceTree = "<group>"; };
+		87076E4D1CA4DB1600154A8A /* UIImageViewModeScaleAspect.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIImageViewModeScaleAspect.framework; path = "Pods/../build/Debug-iphoneos/UIImageViewModeScaleAspect.framework"; sourceTree = "<group>"; };
+		87076E511CA4DCB200154A8A /* icon_gallery.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon_gallery.png; path = icons/icon_gallery.png; sourceTree = "<group>"; };
 		8713F4311CA2AA8800D68B78 /* FLAnimatedImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FLAnimatedImage.framework; path = "../../Library/Developer/Xcode/DerivedData/KellyShop-flpzipbpjtnnnhfoxpetwcakefnt/Build/Products/Debug-iphonesimulator/FLAnimatedImage.framework"; sourceTree = "<group>"; };
 		8713F4321CA2AA8800D68B78 /* NYTPhotoViewer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NYTPhotoViewer.framework; path = "../../Library/Developer/Xcode/DerivedData/KellyShop-flpzipbpjtnnnhfoxpetwcakefnt/Build/Products/Debug-iphonesimulator/NYTPhotoViewer.framework"; sourceTree = "<group>"; };
 		8713F4331CA2AA8800D68B78 /* UITextView_Placeholder.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UITextView_Placeholder.framework; path = "../../Library/Developer/Xcode/DerivedData/KellyShop-flpzipbpjtnnnhfoxpetwcakefnt/Build/Products/Debug-iphonesimulator/UITextView_Placeholder.framework"; sourceTree = "<group>"; };
@@ -318,6 +326,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				87076E4E1CA4DB1600154A8A /* BSGridCollectionViewLayout.framework in Frameworks */,
+				87076E4F1CA4DB1600154A8A /* BSImagePicker.framework in Frameworks */,
+				87076E501CA4DB1600154A8A /* UIImageViewModeScaleAspect.framework in Frameworks */,
 				879F36E31CA3CC74007BFAAF /* QRCode.framework in Frameworks */,
 				879F36E41CA3CC74007BFAAF /* QRCodeReader.framework in Frameworks */,
 				879F36E51CA3CC74007BFAAF /* SCLAlertView_Objective_C.framework in Frameworks */,
@@ -371,6 +382,9 @@
 		27FCD74B4E26679CEC0F11C3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				87076E4B1CA4DB1600154A8A /* BSGridCollectionViewLayout.framework */,
+				87076E4C1CA4DB1600154A8A /* BSImagePicker.framework */,
+				87076E4D1CA4DB1600154A8A /* UIImageViewModeScaleAspect.framework */,
 				879F36E01CA3CC74007BFAAF /* QRCode.framework */,
 				879F36E11CA3CC74007BFAAF /* QRCodeReader.framework */,
 				879F36E21CA3CC74007BFAAF /* SCLAlertView_Objective_C.framework */,
@@ -499,6 +513,7 @@
 		87F0A8681CA130DD0018B31E /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				87076E511CA4DCB200154A8A /* icon_gallery.png */,
 				879F36E81CA3DB3B007BFAAF /* single-logo-without-background.png */,
 				879F36A01CA3C991007BFAAF /* bg_login_top.png */,
 				879F36A11CA3C991007BFAAF /* bg_tabbar.png */,
@@ -739,6 +754,7 @@
 				879F36DB1CA3C991007BFAAF /* icon_shopping_gray.png in Resources */,
 				879F369E1CA3A666007BFAAF /* icon_check.png in Resources */,
 				879F36CE1CA3C991007BFAAF /* icon_logout.png in Resources */,
+				87076E521CA4DCB200154A8A /* icon_gallery.png in Resources */,
 				879F36D51CA3C991007BFAAF /* icon_search_gray.png in Resources */,
 				87B61DFF1CA2420C00D04AE0 /* bg_tabbar.png in Resources */,
 				879F36CD1CA3C991007BFAAF /* icon_logout_large.png in Resources */,

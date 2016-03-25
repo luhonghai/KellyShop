@@ -34,6 +34,7 @@ target 'KellyShop' do
     pod 'RAReorderableLayout'
     pod 'QRCode', '~> 0.5'
     pod 'QRCodeReader.swift', '~> 6.0.0'
+    pod 'BSImagePicker', '~> 2.2'
 end
 
 target 'KellyShopTests' do
