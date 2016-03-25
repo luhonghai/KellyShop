@@ -147,6 +147,8 @@
 		87F0A89C1CA1ADDF0018B31E /* icon_shopping_bag_gray.png in Resources */ = {isa = PBXBuildFile; fileRef = 87F0A89B1CA1ADDF0018B31E /* icon_shopping_bag_gray.png */; };
 		87F0A89E1CA1AE720018B31E /* ProductMainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F0A89D1CA1AE720018B31E /* ProductMainController.swift */; };
 		87F0A8A01CA1C12D0018B31E /* bg_login_top.png in Resources */ = {isa = PBXBuildFile; fileRef = 87F0A89F1CA1C12D0018B31E /* bg_login_top.png */; };
+		87FE34FF1CA51A0600EB55F4 /* icon_camera_qr_code.png in Resources */ = {isa = PBXBuildFile; fileRef = 87FE34FE1CA51A0600EB55F4 /* icon_camera_qr_code.png */; };
+		87FE35011CA51DB100EB55F4 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87FE35001CA51DB100EB55F4 /* AVFoundation.framework */; };
 		E5E0FD7673892026471E7A59 /* Pods_KellyShop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93C198F42D34580BC08E4ABF /* Pods_KellyShop.framework */; };
 /* End PBXBuildFile section */
 
@@ -316,6 +318,8 @@
 		87F0A89B1CA1ADDF0018B31E /* icon_shopping_bag_gray.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon_shopping_bag_gray.png; path = icons/icon_shopping_bag_gray.png; sourceTree = "<group>"; };
 		87F0A89D1CA1AE720018B31E /* ProductMainController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductMainController.swift; sourceTree = "<group>"; };
 		87F0A89F1CA1C12D0018B31E /* bg_login_top.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bg_login_top.png; path = icons/bg_login_top.png; sourceTree = "<group>"; };
+		87FE34FE1CA51A0600EB55F4 /* icon_camera_qr_code.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon_camera_qr_code.png; path = icons/icon_camera_qr_code.png; sourceTree = "<group>"; };
+		87FE35001CA51DB100EB55F4 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		93C198F42D34580BC08E4ABF /* Pods_KellyShop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KellyShop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE2E456AEF4D007D7235B2D8 /* Pods-KellyShop.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KellyShop.release.xcconfig"; path = "Pods/Target Support Files/Pods-KellyShop/Pods-KellyShop.release.xcconfig"; sourceTree = "<group>"; };
 		F592E5A1FFD80248252B233C /* Pods-KellyShop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KellyShop.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KellyShop/Pods-KellyShop.debug.xcconfig"; sourceTree = "<group>"; };
@@ -326,6 +330,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				87FE35011CA51DB100EB55F4 /* AVFoundation.framework in Frameworks */,
 				87076E4E1CA4DB1600154A8A /* BSGridCollectionViewLayout.framework in Frameworks */,
 				87076E4F1CA4DB1600154A8A /* BSImagePicker.framework in Frameworks */,
 				87076E501CA4DB1600154A8A /* UIImageViewModeScaleAspect.framework in Frameworks */,
@@ -382,6 +387,7 @@
 		27FCD74B4E26679CEC0F11C3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				87FE35001CA51DB100EB55F4 /* AVFoundation.framework */,
 				87076E4B1CA4DB1600154A8A /* BSGridCollectionViewLayout.framework */,
 				87076E4C1CA4DB1600154A8A /* BSImagePicker.framework */,
 				87076E4D1CA4DB1600154A8A /* UIImageViewModeScaleAspect.framework */,
@@ -513,6 +519,7 @@
 		87F0A8681CA130DD0018B31E /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				87FE34FE1CA51A0600EB55F4 /* icon_camera_qr_code.png */,
 				87076E511CA4DCB200154A8A /* icon_gallery.png */,
 				879F36E81CA3DB3B007BFAAF /* single-logo-without-background.png */,
 				879F36A01CA3C991007BFAAF /* bg_login_top.png */,
@@ -794,6 +801,7 @@
 				879F36C61CA3C991007BFAAF /* icon_chat.png in Resources */,
 				87B61E021CA2420C00D04AE0 /* icon_camera.png in Resources */,
 				879F36C41CA3C991007BFAAF /* icon_camera.png in Resources */,
+				87FE34FF1CA51A0600EB55F4 /* icon_camera_qr_code.png in Resources */,
 				87F0A86C1CA131160018B31E /* single-logo-without-background.png in Resources */,
 				87B61E161CA2420C00D04AE0 /* icon_tags_gray.png in Resources */,
 				87B61E061CA2420C00D04AE0 /* icon_friends_gray.png in Resources */,

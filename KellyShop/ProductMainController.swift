@@ -33,6 +33,11 @@ class ProductMainController: RealmSearchViewController {
         super.viewDidLoad()
  
         self.updateTableViewLayout()
+    }                                                                                                 
+    
+    override func viewDidDisappear(animated: Bool) {
+        //Logger.log("view did disapper")
+        
     }
     
     func updateTableViewLayout() {

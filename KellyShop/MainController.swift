@@ -8,6 +8,8 @@
 
 import UIKit
 import RDVTabBarController
+import QRCodeReader
+import AVFoundation
 
 class TabBarItem {
     
@@ -28,7 +30,11 @@ class TabBarItem {
     }
 }
 
-class MainController: RDVTabBarController {
+class MainController: RDVTabBarController, QRCodeReaderViewControllerDelegate {
+    
+    lazy var reader = QRCodeReaderViewController(cancelButtonTitle: "đóng", metadataObjectTypes: [AVMetadataObjectTypeQRCode])
+    
+    var btnQRCamera: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,14 +57,69 @@ class MainController: RDVTabBarController {
             let unselectedImage = ImageHelper.imageWithImage(UIImage(named: unselectedImg)!, scaledToSize: CGSize(width: tabBarHeight, height: tabBarHeight))
             item.setFinishedSelectedImage(selectedImage,
                 withFinishedUnselectedImage: unselectedImage)
-            index++
+            index += 1
         }
-        
         initObserver()
+        if QRCodeReader.isAvailable() {
+            addCameraQRCodeButton()
+        }
+    }
+    
+    override func tabBar(tabBar: RDVTabBar!, shouldSelectItemAtIndex index: Int) -> Bool {
+        return super.tabBar(tabBar, shouldSelectItemAtIndex: index)
+    }
+    
+    override func tabBar(tabBar: RDVTabBar!, didSelectItemAtIndex index: Int) {
+        super.tabBar(tabBar, didSelectItemAtIndex: index)
+        if QRCodeReader.isAvailable() {
+            let size = self.view.frame.width / 6
+            if index == 0 {
+                UIView.animateWithDuration(0.5, animations: {
+                    self.btnQRCamera.alpha = 1
+                    self.btnQRCamera.frame.origin.y = self.view.frame.height - size * 1.5 - self.tabBar.frame.height - 5
+                })
+                
+            } else {
+                UIView.animateWithDuration(0.5, animations: {
+                    self.btnQRCamera.alpha = 0
+                    self.btnQRCamera.frame.origin.y = self.view.frame.height - size * 1.5 - self.tabBar.frame.height + 5
+                })
+            }
+        }
+    }
+    
+    func reader(reader: QRCodeReaderViewController, didScanResult result: QRCodeReaderResult) {
+        print("QRCode \(result.value)")
+        self.dismissViewControllerAnimated(true) { 
+            
+        }
+    }
+    
+    func readerDidCancel(reader: QRCodeReaderViewController) {
+        self.dismissViewControllerAnimated(true) {
+            
+        }
+    }
+    
+    
+    @IBAction func tapQRCameraButton(sender: UIButton!) {
+        reader.modalPresentationStyle = .FormSheet
+        reader.delegate = self
+        presentViewController(reader, animated: true, completion: nil)
+    }
+    
+    func addCameraQRCodeButton() {
+        let size = self.view.frame.width / 6
+        btnQRCamera = UIButton(type: UIButtonType.Custom)
+        btnQRCamera.frame = CGRectMake(self.view.frame.width - size * 1.5, self.view.frame.height - size * 1.5 - self.tabBar.frame.height, size, size)
+        btnQRCamera.setImage(ImageHelper.imageWithImage(image: UIImage(named: "icon_camera_qr_code")!, w: size, h: size), forState: UIControlState.Normal)
+        btnQRCamera.backgroundColor = UIColor.clearColor()
+        btnQRCamera.addTarget(self, action: #selector(MainController.tapQRCameraButton(_:)), forControlEvents: UIControlEvents.TouchUpInside)
+        self.view.addSubview(btnQRCamera)
     }
     
     func initObserver() {
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "backToLogin:", name: "backToLogin", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(MainController.backToLogin(_:)), name: "backToLogin", object: nil)
     }
     
     
