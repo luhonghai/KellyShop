@@ -1,26 +1,24 @@
 //
-//  JSProduct.swift
+//  JSProvider.swift
 //  KellyShop
 //
-//  Created by Hai Lu on 3/23/16.
+//  Created by Hai Lu on 3/25/16.
 //  Copyright © 2016 Hai Lu. All rights reserved.
 //
 
 import Foundation
 import RealmSwift
 
-class JSProduct : JSBaseEntity {
+class JSProvider : JSBaseEntity {
     dynamic var id = ""
     dynamic var name = ""
-    dynamic var basePrice = 0
-    dynamic var transferPrice = 0
-    dynamic var sellPrice = 0
+    dynamic var address = ""
+    dynamic var phone = ""
     dynamic var detail = ""
-    dynamic var creator: JSUser!
     dynamic var search = ""
-    dynamic var provider: JSProvider!
-    dynamic var category: JSCategory?
+    dynamic var isEnable = true
     let photos = List<JSPhoto>()
+    dynamic var category: JSCategory?
     
     override static func primaryKey() -> String? {
         return "id"

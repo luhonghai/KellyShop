@@ -9,16 +9,18 @@
 import Foundation
 import RealmSwift
 
-class JSCategory : Object {
+class JSCategory : JSBaseEntity {
     
     dynamic var id = ""
     dynamic var name = ""
     dynamic var code = ""
     dynamic var icon = ""
     dynamic var counter = 0
-    
+    dynamic var shop: JSShop?
     
     let products = List<JSProduct>()
+    
+    let providers = List<JSProvider>()
     
     override static func primaryKey() -> String? {
         return "id"
@@ -60,18 +62,26 @@ class JSCategory : Object {
         ]
         let realm = try! Realm()
         try! realm.write({
+            var shop: JSShop!
+            if realm.objects(JSShop).count > 0  {
+                shop = realm.objects(JSShop).first
+            } else {
+                shop = JSShop.defaultShop()
+                realm.add(shop)
+            }
             for category in categories {
                 if let oldCategory = realm.objects(JSCategory).filter(NSPredicate(format: "id == %@", category.id)).first {
-                    Logger.log("Update category \(category.name) \(category.id)")
+                    //Logger.log("Update category \(category.name) \(category.id)")
                     category.counter = oldCategory.counter
                     realm.add(category, update: true)
                 } else {
-                    Logger.log("Create category \(category.name) \(category.id)")
+                    //Logger.log("Create category \(category.name) \(category.id)")
+                    category.shop = shop
                     realm.add(category)
                 }
             }
             
         })
-        
+        JSShop.getInstance()
     }
 }

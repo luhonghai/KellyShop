@@ -11,12 +11,9 @@ import RealmSwift
 import FBSDKCoreKit
 
 class UserProfile: Object {
-    dynamic var name = ""
-    dynamic var email = ""
-    dynamic var id = ""
-    dynamic var dob = ""
-    dynamic var avatar = ""
     dynamic var token = ""
+    dynamic var lastLogin = NSDate()
+    dynamic var user: JSUser!
 }
 
 class AccountManager {
@@ -50,32 +47,39 @@ class AccountManager {
     
     class func fetch(completion:(status: Bool) -> Void) {
         if isLogin() {
-            let graphRequest : FBSDKGraphRequest = FBSDKGraphRequest(graphPath: "me?fields=id,name,email,birthday", parameters: nil)
+            let graphRequest : FBSDKGraphRequest = FBSDKGraphRequest(graphPath: "me?fields=id,name,email", parameters: nil)
             graphRequest.startWithCompletionHandler({ (connection, result, error) -> Void in
                 if ((error) != nil) {
-                    Logger.logError(error)
+                     Logger.logError(error)
                     completion(status: false)
                 } else {
                     Logger.log(result)
                     let id:String =  result.valueForKey("id") as! String
-                    let avatar:String = "https://graph.facebook.com/\(id)/picture?type=square&width=320&height=320"
                     let token = FBSDKAccessToken.currentAccessToken().tokenString
                     var username = result.valueForKey("email") as? String
                     if username == nil {
                         username = "\(id)@facebook.com"
                     }
                     let name = result.valueForKey("name") as! String
-                    let dob = result.valueForKey("birthday") as? String;
-                    let user = UserProfile()
-                    user.id = id
-                    user.name = name
-                    if dob != nil {
-                        user.dob = dob!
-                    }
-                    user.email = username!
-                    user.avatar = avatar
-                    user.token = token
-                    save(user)
+                    let dob = result.valueForKey("birthday") as? String
+                    let currentProfile = UserProfile()
+                    let realm = try! Realm()
+                    try! realm.write({ 
+                        var user = realm.objects(JSUser).filter("id == %@", id).first
+                        if user == nil {
+                            user = JSUser()
+                            user!.id = id
+                        }
+                        if dob != nil {
+                            user!.dob = dob!
+                        }
+                        user!.name = name
+                        user!.email = username!
+                        user!.modifiedDate = NSDate()
+                        currentProfile.token = token
+                        currentProfile.user = user
+                    })
+                    save(currentProfile)
                     completion(status: true)
                 }
             })

@@ -9,13 +9,12 @@
 import Foundation
 import RealmSwift
 
-class JSProductStatus : Object {
+class JSProductStatus : JSBaseEntity {
     dynamic var id = ""
     dynamic var status = false
     dynamic var name = ""
     dynamic var detail = ""
-    dynamic var creator = ""
-    dynamic var createdDate = NSDate()
+    dynamic var creator: JSUser?
     dynamic var product: JSProduct?
     
     override static func primaryKey() -> String? {

@@ -71,7 +71,7 @@ class ProductEditorController: UIViewController, UICollectionViewDelegate, Image
 extension ProductEditorController {
     
     func changeCategory() {
-        product?.creator = AccountManager.current()!.id
+        product?.creator = AccountManager.current()!.user
         let category = categoryDataSource.selectedCategory
         let counter = category.counter + 1
         product?.id = "\(category.code)\(counter)"
@@ -111,7 +111,7 @@ extension ProductEditorController {
                 product?.photos.append(photo)
             }
         }
-        product?.search = "\(product?.name), \(product?.basePrice)k, \(product?.sellPrice)k, \(product?.transferPrice)k, \(product?.id), \(product?.detail), \(product?.category?.code), \(product?.category?.name), \(product?.category?.name), \(AccountManager.current()?.name)"
+        product?.search = "\(product?.name), \(product?.basePrice)k, \(product?.sellPrice)k, \(product?.transferPrice)k, \(product?.id), \(product?.detail), \(product?.category?.code), \(product?.category?.name), \(product?.category?.name), \(AccountManager.current()?.user.name)"
         let realm = try! Realm()
         try! realm.write({
             categoryDataSource.selectedCategory.counter += 1
@@ -433,7 +433,7 @@ extension ProductEditorController {
                 weakSelf!.photoDataSource.photos = []
                 if imagePaths.count > 0 {
                     for imagePath in imagePaths {
-                        let photo = JSProductPhoto()
+                        let photo = JSPhoto()
                         photo.localPath = imagePath
                         weakSelf!.photoDataSource.photos?.append(photo)
                     }
@@ -474,7 +474,7 @@ extension ProductEditorController {
 }
 
 class PhotoCollectionDataSource: NSObject, RAReorderableLayoutDataSource {
-    var photos: Array<JSProductPhoto>?
+    var photos: Array<JSPhoto>?
     
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

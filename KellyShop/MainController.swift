@@ -32,7 +32,7 @@ class TabBarItem {
 
 class MainController: RDVTabBarController, QRCodeReaderViewControllerDelegate {
     
-    lazy var reader = QRCodeReaderViewController(cancelButtonTitle: "đóng", metadataObjectTypes: [AVMetadataObjectTypeQRCode])
+    var reader:QRCodeReaderViewController!
     
     var btnQRCamera: UIButton!
     
@@ -103,8 +103,11 @@ class MainController: RDVTabBarController, QRCodeReaderViewControllerDelegate {
     
     
     @IBAction func tapQRCameraButton(sender: UIButton!) {
-        reader.modalPresentationStyle = .FormSheet
-        reader.delegate = self
+        if reader == nil {
+            reader = QRCodeReaderViewController(cancelButtonTitle: "đóng", metadataObjectTypes: [AVMetadataObjectTypeQRCode])
+            reader.modalPresentationStyle = .FormSheet
+            reader.delegate = self
+        }
         presentViewController(reader, animated: true, completion: nil)
     }
     

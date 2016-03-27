@@ -9,11 +9,9 @@
 import Foundation
 import RealmSwift
 
-class JSProductPhoto: Object {
+class JSPhoto: JSBaseEntity {
     dynamic var name = ""
     dynamic var localPath = ""
     dynamic var remotePath = ""
-    dynamic var createdDate = NSDate()
-    dynamic var product: JSProduct?
     
 }

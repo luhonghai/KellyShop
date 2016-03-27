@@ -25,12 +25,10 @@ class UserProfileController: UIViewController {
     override func viewDidLoad() {
         //btnLogout.backgroundColor = UIColor.clearColor()
         //btnLogout.delegate = self
-        lblUsername.text = AccountManager.current()?.name
+        lblUsername.text = AccountManager.current()?.user.name
         imgAvatar.layer.cornerRadius = imgAvatar.frame.width / 2
         imgAvatar.layer.masksToBounds = true
-        if !(AccountManager.current()?.avatar)!.isEmpty {
-            imgAvatar.load((AccountManager.current()?.avatar)!, placeholder: UIImage(named: "icon_profile.png"))
-        }
+        imgAvatar.load((AccountManager.current()?.user.getFacebookAvatar())!, placeholder: UIImage(named: "icon_profile.png"))
         
         btnLogout.layer.cornerRadius = kCornerRadius
         btnLogout.layer.masksToBounds = true

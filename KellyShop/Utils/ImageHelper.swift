@@ -45,12 +45,13 @@ class ImageHelper {
         let imageView = UIImageView(image: image)
         let size = min(imageView.frame.width, imageView.frame.height)
         // Have photo ID. try to generate QR code
-        var qrcode = QRCode(pid)
+        var qrcode = QRCode("\(JSShop.getInstance().website)?rel=QRCode&id=\(pid)")
         qrcode?.color = CIColor(color: ColorHelper.APP_DEFAULT)
-        let qrCodeWidth = size / 5
+        var qrCodeWidth = size / 5
         qrcode?.size = CGSize(width: qrCodeWidth, height: qrCodeWidth)
         let imgQrCode = UIImageView(image: qrcode?.image)
         imageView.addSubview(imgQrCode)
+        qrCodeWidth = imgQrCode.frame.width
         let strokeTextAttributes = [
             NSStrokeColorAttributeName : ColorHelper.APP_DEFAULT,
             NSForegroundColorAttributeName : UIColor.whiteColor(),
@@ -78,7 +79,7 @@ class ImageHelper {
         lblFacebook.frame = CGRectMake(qrCodeWidth + 10,lblCode.frame.origin.y + lblCode.frame.height  + 10, imageView.frame.width - (qrCodeWidth + 10), lblFacebookHeight)
         lblFacebook.adjustsFontSizeToFitWidth = true
         lblFacebook.textAlignment = NSTextAlignment.Left
-        lblFacebook.attributedText = NSAttributedString(string:  "facebook.com/lovely.jenny.shop", attributes: strokeTextAttributes)
+        lblFacebook.attributedText = NSAttributedString(string:  JSShop.getInstance().website, attributes: strokeTextAttributes)
         imageView.addSubview(lblFacebook)
         
         
@@ -101,7 +102,7 @@ class ImageHelper {
         lblPhone.adjustsFontSizeToFitWidth = true
         lblPhone.textColor = UIColor.whiteColor()
         lblPhone.textAlignment = NSTextAlignment.Center
-        lblPhone.attributedText = NSAttributedString(string:  "liên hệ 01688.084.099 - 0913.998.692", attributes: strokeTextAttributes)
+        lblPhone.attributedText = NSAttributedString(string:  JSShop.getInstance().contact, attributes: strokeTextAttributes)
         imageView.addSubview(lblPhone)
         
         
