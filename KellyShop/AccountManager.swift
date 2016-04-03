@@ -18,6 +18,8 @@ class UserProfile: Object {
 
 class AccountManager {
     
+    static let IS_DEBUG = false
+    
     static var instance: UserProfile?
     
     class func current() -> UserProfile? {
@@ -27,6 +29,12 @@ class AccountManager {
             if users.count > 0 {
                 instance = users.first
             }
+        }
+        if IS_DEBUG {
+            instance = UserProfile()
+            let user = JSUser()
+            user.name = "Lữ Hồng Hải"
+            instance?.user = user
         }
         return instance
     }
@@ -101,6 +109,6 @@ class AccountManager {
     }
     
     class func isLogin() -> Bool {
-        return FBSDKAccessToken.currentAccessToken() != nil //&& current() != nil
+        return FBSDKAccessToken.currentAccessToken() != nil || current() != nil
     }
 }

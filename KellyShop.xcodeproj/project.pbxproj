@@ -11,6 +11,10 @@
 		87076E4F1CA4DB1600154A8A /* BSImagePicker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87076E4C1CA4DB1600154A8A /* BSImagePicker.framework */; };
 		87076E501CA4DB1600154A8A /* UIImageViewModeScaleAspect.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87076E4D1CA4DB1600154A8A /* UIImageViewModeScaleAspect.framework */; };
 		87076E521CA4DCB200154A8A /* icon_gallery.png in Resources */ = {isa = PBXBuildFile; fileRef = 87076E511CA4DCB200154A8A /* icon_gallery.png */; };
+		870BE8EB1CB1439900948870 /* SimpleCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870BE8EA1CB1439900948870 /* SimpleCalculator.swift */; };
+		870BE8EE1CB14CF000948870 /* icon_calculator_gray.png in Resources */ = {isa = PBXBuildFile; fileRef = 870BE8EC1CB14CF000948870 /* icon_calculator_gray.png */; };
+		870BE8EF1CB14CF000948870 /* icon_calculator.png in Resources */ = {isa = PBXBuildFile; fileRef = 870BE8ED1CB14CF000948870 /* icon_calculator.png */; };
+		870BE8F11CB14E7700948870 /* DeviceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870BE8F01CB14E7700948870 /* DeviceManager.swift */; };
 		8713F4341CA2AA8800D68B78 /* FLAnimatedImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8713F4311CA2AA8800D68B78 /* FLAnimatedImage.framework */; };
 		8713F4351CA2AA8800D68B78 /* NYTPhotoViewer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8713F4321CA2AA8800D68B78 /* NYTPhotoViewer.framework */; };
 		8713F4361CA2AA8800D68B78 /* UITextView_Placeholder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8713F4331CA2AA8800D68B78 /* UITextView_Placeholder.framework */; };
@@ -222,6 +226,10 @@
 		87076E4C1CA4DB1600154A8A /* BSImagePicker.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BSImagePicker.framework; path = "../../Library/Developer/Xcode/DerivedData/KellyShop-flpzipbpjtnnnhfoxpetwcakefnt/Build/Products/Debug-iphoneos/BSImagePicker.framework"; sourceTree = "<group>"; };
 		87076E4D1CA4DB1600154A8A /* UIImageViewModeScaleAspect.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIImageViewModeScaleAspect.framework; path = "Pods/../build/Debug-iphoneos/UIImageViewModeScaleAspect.framework"; sourceTree = "<group>"; };
 		87076E511CA4DCB200154A8A /* icon_gallery.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon_gallery.png; path = icons/icon_gallery.png; sourceTree = "<group>"; };
+		870BE8EA1CB1439900948870 /* SimpleCalculator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleCalculator.swift; sourceTree = "<group>"; };
+		870BE8EC1CB14CF000948870 /* icon_calculator_gray.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon_calculator_gray.png; path = icons/icon_calculator_gray.png; sourceTree = "<group>"; };
+		870BE8ED1CB14CF000948870 /* icon_calculator.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon_calculator.png; path = icons/icon_calculator.png; sourceTree = "<group>"; };
+		870BE8F01CB14E7700948870 /* DeviceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DeviceManager.swift; path = Utils/DeviceManager.swift; sourceTree = "<group>"; };
 		8713F4311CA2AA8800D68B78 /* FLAnimatedImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FLAnimatedImage.framework; path = "../../Library/Developer/Xcode/DerivedData/KellyShop-flpzipbpjtnnnhfoxpetwcakefnt/Build/Products/Debug-iphonesimulator/FLAnimatedImage.framework"; sourceTree = "<group>"; };
 		8713F4321CA2AA8800D68B78 /* NYTPhotoViewer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NYTPhotoViewer.framework; path = "../../Library/Developer/Xcode/DerivedData/KellyShop-flpzipbpjtnnnhfoxpetwcakefnt/Build/Products/Debug-iphonesimulator/NYTPhotoViewer.framework"; sourceTree = "<group>"; };
 		8713F4331CA2AA8800D68B78 /* UITextView_Placeholder.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UITextView_Placeholder.framework; path = "../../Library/Developer/Xcode/DerivedData/KellyShop-flpzipbpjtnnnhfoxpetwcakefnt/Build/Products/Debug-iphonesimulator/UITextView_Placeholder.framework"; sourceTree = "<group>"; };
@@ -582,6 +590,7 @@
 				87B61E291CA2598A00D04AE0 /* ProductEditorController.swift */,
 				87C464ED1CA6DBDB00E6897B /* ProviderMainController.swift */,
 				87C464EF1CA6DBF700E6897B /* ProviderEditorController.swift */,
+				870BE8EA1CB1439900948870 /* SimpleCalculator.swift */,
 			);
 			path = KellyShop;
 			sourceTree = "<group>";
@@ -611,6 +620,7 @@
 				87A6BF4E1CA0439C00BF2AF7 /* FileHelper.swift */,
 				87A6BF4F1CA0439C00BF2AF7 /* HttpDownloader.swift */,
 				87A6BF501CA0439C00BF2AF7 /* ImageHelper.swift */,
+				870BE8F01CB14E7700948870 /* DeviceManager.swift */,
 				87A6BF511CA0439C00BF2AF7 /* Logger.swift */,
 				87A6BF561CA043E800BF2AF7 /* StringHelper.swift */,
 				87B61E191CA245FE00D04AE0 /* UIVViewController-SLPopup.swift */,
@@ -623,6 +633,8 @@
 			isa = PBXGroup;
 			children = (
 				87C464F11CA6DF3800E6897B /* icon_call.png */,
+				870BE8EC1CB14CF000948870 /* icon_calculator_gray.png */,
+				870BE8ED1CB14CF000948870 /* icon_calculator.png */,
 				87FE34FE1CA51A0600EB55F4 /* icon_camera_qr_code.png */,
 				87F0C5D01CA54F7F00CB0A68 /* icon_add.png */,
 				87076E511CA4DCB200154A8A /* icon_gallery.png */,
@@ -905,12 +917,14 @@
 				87F0A86E1CA135CF0018B31E /* bg_footer.jpg in Resources */,
 				87B61E131CA2420C00D04AE0 /* icon_shopping_cart.png in Resources */,
 				879F36C71CA3C991007BFAAF /* icon_check_large.png in Resources */,
+				870BE8EE1CB14CF000948870 /* icon_calculator_gray.png in Resources */,
 				879F36D71CA3C991007BFAAF /* icon_shopping_bag_gray.png in Resources */,
 				87F0C5BB1CA54D4400CB0A68 /* icon_profile_large.png in Resources */,
 				879F36CB1CA3C991007BFAAF /* icon_friends.png in Resources */,
 				879F36D91CA3C991007BFAAF /* icon_shopping_cart_gray.png in Resources */,
 				87B61E051CA2420C00D04AE0 /* icon_check_list.png in Resources */,
 				87F0C5D11CA54F7F00CB0A68 /* icon_add.png in Resources */,
+				870BE8EF1CB14CF000948870 /* icon_calculator.png in Resources */,
 				879F36DA1CA3C991007BFAAF /* icon_shopping_cart.png in Resources */,
 				87F0C5CA1CA54D4400CB0A68 /* icon_shopping.png in Resources */,
 				87F0C5C11CA54D4400CB0A68 /* icon_search_gray.png in Resources */,
@@ -1073,6 +1087,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				870BE8F11CB14E7700948870 /* DeviceManager.swift in Sources */,
 				87C464F01CA6DBF700E6897B /* ProviderEditorController.swift in Sources */,
 				87A6BF251CA040E200BF2AF7 /* KellyShop.xcdatamodeld in Sources */,
 				878B479C1CA2765A000C126F /* JSPhoto.swift in Sources */,
@@ -1100,6 +1115,7 @@
 				87F0C5701CA5295B00CB0A68 /* JSShop.swift in Sources */,
 				87A6BF521CA0439C00BF2AF7 /* FileHelper.swift in Sources */,
 				87F0A89E1CA1AE720018B31E /* ProductMainController.swift in Sources */,
+				870BE8EB1CB1439900948870 /* SimpleCalculator.swift in Sources */,
 				87A6BF541CA0439C00BF2AF7 /* ImageHelper.swift in Sources */,
 				87F0C5D31CA5500800CB0A68 /* JSSentence.swift in Sources */,
 			);

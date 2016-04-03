@@ -28,22 +28,27 @@ class LoginController: UIViewController, FBSDKLoginButtonDelegate {
         //self.bgBottom.translatesAutoresizingMaskIntoConstraints = true
         self.bgBottom.layer.masksToBounds = true
         weak var weakSelf = self
-        
-        if AccountManager.isLogin() {
+        if AccountManager.IS_DEBUG {
+            weakSelf!.gotoMainPage()
+        } else if AccountManager.isLogin() {
             Logger.log("User is login")
-            dispatch_async(dispatch_get_main_queue(),{
-                SwiftSpinner.show("đang xác thực tài khoản, vui lòng chờ trong giây lát ...")
-            })
-            AccountManager.fetch({ (status) -> Void in
-                delay(weakSelf!.waitTime, closure: {
-                    SwiftSpinner.hide()
-                    if status {
-                        weakSelf!.gotoMainPage()
-                    } else {
-                        //TODO show login error
-                    }
+            if DeviceManager.isConnectedToNetwork() {
+                dispatch_async(dispatch_get_main_queue(),{
+                    SwiftSpinner.show("đang xác thực tài khoản, vui lòng chờ trong giây lát ...")
                 })
-            })
+                AccountManager.fetch({ (status) -> Void in
+                    delay(weakSelf!.waitTime, closure: {
+                        SwiftSpinner.hide()
+                        if status {
+                            weakSelf!.gotoMainPage()
+                        } else {
+                            //TODO show login error
+                        }
+                    })
+                })
+            } else {
+                weakSelf!.gotoMainPage()
+            }
             
         } else {
             dispatch_async(dispatch_get_main_queue(),{

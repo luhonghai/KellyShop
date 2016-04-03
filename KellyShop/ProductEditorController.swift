@@ -121,18 +121,19 @@ extension ProductEditorController {
     }
     
     @IBAction func tapRefresh(sender: UITapGestureRecognizer) {
-        let builder = SCLAlertViewBuilder().addButtonWithActionBlock("đồng ý", {
-                self.refreshForm()
-            }).shouldDismissOnTapOutside(true)
-        let showBuilder = SCLAlertViewShowBuilder()
-            .style(.Custom)
-            .title("làm lại")
-            .subTitle("xóa toàn bộ thông tin đã nhập")
-            .color(ColorHelper.APP_RED)
-            .image(UIImage(named: "icon_refresh_large.png"))
-            .closeButtonTitle("không")
-        
-        showBuilder.showAlertView(builder.alertView, onViewController: self)
+        self.dismissViewControllerAnimated(true, completion: nil)
+//        let builder = SCLAlertViewBuilder().addButtonWithActionBlock("đồng ý", {
+//                self.refreshForm()
+//            }).shouldDismissOnTapOutside(true)
+//        let showBuilder = SCLAlertViewShowBuilder()
+//            .style(.Custom)
+//            .title("làm lại")
+//            .subTitle("xóa toàn bộ thông tin đã nhập")
+//            .color(ColorHelper.APP_RED)
+//            .image(UIImage(named: "icon_refresh_large.png"))
+//            .closeButtonTitle("không")
+//        
+//        showBuilder.showAlertView(builder.alertView, onViewController: self)
     }
     
     

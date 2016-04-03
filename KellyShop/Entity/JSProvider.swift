@@ -18,7 +18,6 @@ class JSProvider : JSBaseEntity {
     dynamic var search = ""
     dynamic var isEnable = true
     let photos = List<JSPhoto>()
-    dynamic var category: JSCategory?
     
     override static func primaryKey() -> String? {
         return "id"

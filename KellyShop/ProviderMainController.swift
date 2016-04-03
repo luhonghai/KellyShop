@@ -66,11 +66,10 @@ class ProviderMainController : RealmSearchViewController {
         cell.imgCall.clipsToBounds = true
         cell.container.layer.cornerRadius = kCornerRadius
         if let provider = object as? JSProvider {
-            let category = provider.category
             cell.lblName.text = provider.name
             cell.lblPhone.text = provider.phone
             cell.txtAddress.text = provider.address
-            cell.imgCategory.image = UIImage(named: (category?.icon)!)
+
         }
         return cell
     }

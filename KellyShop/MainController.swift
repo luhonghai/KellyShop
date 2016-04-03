@@ -14,8 +14,10 @@ import AVFoundation
 class TabBarItem {
     
     static let VALUES = [
-        TabBarItem(controller: "ProductMainController", selectedImage: "icon_search.png", unselectedImage: "icon_search_gray.png"),
-        TabBarItem(controller: "ProductEditorController", selectedImage: "icon_shopping_bag.png", unselectedImage: "icon_shopping_bag_gray.png"),
+        TabBarItem(controller: "ProductMainController", selectedImage: "icon_shopping_bag.png", unselectedImage: "icon_shopping_bag_gray.png"),
+//        TabBarItem(controller: "ProductEditorController", selectedImage: "icon_shopping_bag.png", unselectedImage: "icon_shopping_bag_gray.png"),
+        TabBarItem(controller: "ProviderMainController", selectedImage: "icon_provider.png", unselectedImage: "icon_provider_gray.png"),
+        TabBarItem(controller: "SimpleCalculator", selectedImage: "icon_calculator.png", unselectedImage: "icon_calculator_gray.png"),
         TabBarItem(controller: "UserProfileController", selectedImage: "icon_profile.png", unselectedImage: "icon_profile_gray.png")
     ]
     
@@ -35,6 +37,8 @@ class MainController: RDVTabBarController, QRCodeReaderViewControllerDelegate {
     var reader:QRCodeReaderViewController!
     
     var btnQRCamera: UIButton!
+    
+    var btnAdd: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,6 +67,7 @@ class MainController: RDVTabBarController, QRCodeReaderViewControllerDelegate {
         if QRCodeReader.isAvailable() {
             addCameraQRCodeButton()
         }
+        addNewItemButton()
     }
     
     override func tabBar(tabBar: RDVTabBar!, shouldSelectItemAtIndex index: Int) -> Bool {
@@ -71,21 +76,25 @@ class MainController: RDVTabBarController, QRCodeReaderViewControllerDelegate {
     
     override func tabBar(tabBar: RDVTabBar!, didSelectItemAtIndex index: Int) {
         super.tabBar(tabBar, didSelectItemAtIndex: index)
+        let size = self.view.frame.width / 6
         if QRCodeReader.isAvailable() {
-            let size = self.view.frame.width / 6
-            if index == 0 {
-                UIView.animateWithDuration(0.5, animations: {
-                    self.btnQRCamera.alpha = 1
-                    self.btnQRCamera.frame.origin.y = self.view.frame.height - size * 1.5 - self.tabBar.frame.height - 5
-                })
-                
-            } else {
-                UIView.animateWithDuration(0.5, animations: {
-                    self.btnQRCamera.alpha = 0
-                    self.btnQRCamera.frame.origin.y = self.view.frame.height - size * 1.5 - self.tabBar.frame.height + 5
-                })
-            }
+            let condition = index == 0
+            UIView.animateWithDuration(0.5, animations: {
+                self.btnQRCamera.alpha = condition ? 1 : 0
+                self.btnQRCamera.frame.origin.y = self.view.frame.height - size * 1.5 - self.tabBar.frame.height - (condition ? 5 : -5)
+                }, completion: { (status) in
+                    //self.btnQRCamera.hidden = index != 0
+            })
+            
         }
+        UIView.animateWithDuration(0.5, animations: {
+            let condition = index == 0 || index == 1
+            self.btnAdd.alpha = condition ? 1 : 0
+            self.btnAdd.frame.origin.y = self.view.frame.height - size * 1.5 - self.tabBar.frame.height - (condition ? 5 : -5)
+        },
+        completion: { (status) in
+            //self.btnAdd.hidden = index != 2
+        })
     }
     
     func reader(reader: QRCodeReaderViewController, didScanResult result: QRCodeReaderResult) {
@@ -108,13 +117,44 @@ class MainController: RDVTabBarController, QRCodeReaderViewControllerDelegate {
             reader.modalPresentationStyle = .FormSheet
             reader.delegate = self
         }
-        presentViewController(reader, animated: true, completion: nil)
+        self.presentViewController(reader, animated: true, completion: nil)
+    }
+    
+    @IBAction func tapAddButton(sender: UIButton!) {
+        var identifier = ""
+        switch self.selectedIndex {
+        case 0:
+            identifier = "ProductEditorController"
+            break
+        case 1:
+            identifier = "ProviderEditorController"
+            break
+        default:
+            break
+        }
+        let controller = self.storyboard?.instantiateViewControllerWithIdentifier(identifier)
+//        let padding:CGFloat = 20
+//        controller!.view.frame = CGRectMake(self.view.frame.origin.x + padding, self.view.frame.origin.y + padding, self.view.frame.width - padding * 2, self.view.frame.height - padding * 2)
+        self.presentViewController(controller!, animated: true) {
+            
+        }
+    }
+    
+    func addNewItemButton() {
+        let size = self.view.frame.width / 6
+        btnAdd = UIButton(type: UIButtonType.Custom)
+        btnAdd.frame =  CGRectMake(self.view.frame.width - size * 1.5, self.view.frame.height - size * 1.5 - self.tabBar.frame.height, size, size)
+        btnAdd.setImage(ImageHelper.imageWithImage(image: UIImage(named: "icon_add")!, w: size, h: size), forState: UIControlState.Normal)
+        btnAdd.backgroundColor = UIColor.clearColor()
+        btnAdd.addTarget(self, action: #selector(MainController.tapAddButton(_:)), forControlEvents: UIControlEvents.TouchUpInside)
+        self.view.addSubview(btnAdd)
+
     }
     
     func addCameraQRCodeButton() {
         let size = self.view.frame.width / 6
         btnQRCamera = UIButton(type: UIButtonType.Custom)
-        btnQRCamera.frame = CGRectMake(self.view.frame.width - size * 1.5, self.view.frame.height - size * 1.5 - self.tabBar.frame.height, size, size)
+        btnQRCamera.frame = CGRectMake(self.view.frame.width - size * 1.5, self.view.frame.height - size * 2.6 - self.tabBar.frame.height, size, size)
         btnQRCamera.setImage(ImageHelper.imageWithImage(image: UIImage(named: "icon_camera_qr_code")!, w: size, h: size), forState: UIControlState.Normal)
         btnQRCamera.backgroundColor = UIColor.clearColor()
         btnQRCamera.addTarget(self, action: #selector(MainController.tapQRCameraButton(_:)), forControlEvents: UIControlEvents.TouchUpInside)
