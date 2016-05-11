@@ -25,6 +25,7 @@ class ProductTableViewCell: UITableViewCell {
     @IBOutlet var container: UIView!
     
     override func layoutSubviews() {
+        super.layoutSubviews()
         contentView.frame = UIEdgeInsetsInsetRect(contentView.frame, UIEdgeInsetsMake(10, 10, 10, 10))
     }
 }
