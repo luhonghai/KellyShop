@@ -35,6 +35,7 @@ target 'KellyShop' do
     pod 'QRCode', '~> 0.5'
     pod 'QRCodeReader.swift', '~> 6.0.0'
     pod 'BSImagePicker', '~> 2.2'
+    pod 'BGTableViewRowActionWithImage'
 end
 
 target 'KellyShopTests' do

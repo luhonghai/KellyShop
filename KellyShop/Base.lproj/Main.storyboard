@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="UJl-Vv-j4B">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="UJl-Vv-j4B">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -69,7 +69,7 @@
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="F3p-bj-cRo">
                                 <rect key="frame" x="20" y="40" width="335" height="50"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="F3p-bj-cRo" secondAttribute="height" multiplier="67:10" id="qJr-ex-M05"/>
                                 </constraints>
@@ -176,7 +176,7 @@
                             </stepper>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="X3w-ec-zsx">
                                 <rect key="frame" x="20" y="282" width="335" height="77"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
                                 <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" address="YES"/>
@@ -436,39 +436,68 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="99"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sos-iv-Pfn">
-                                            <rect key="frame" x="8" y="0.0" width="359" height="90"/>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sos-iv-Pfn">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="99"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" alpha="0.050000000000000003" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon_shoes.png" translatesAutoresizingMaskIntoConstraints="NO" id="gFj-ef-y3A">
-                                                    <rect key="frame" x="269" y="0.0" width="90" height="90"/>
+                                                <imageView userInteractionEnabled="NO" alpha="0.050000000000000003" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_shoes.png" translatesAutoresizingMaskIntoConstraints="NO" id="gFj-ef-y3A">
+                                                    <rect key="frame" x="276" y="0.0" width="99" height="99"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="gFj-ef-y3A" secondAttribute="height" multiplier="1:1" id="1QZ-Dg-UlP"/>
+                                                    </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Mã: B01" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="weg-vO-IjL">
-                                                    <rect key="frame" x="86" y="8" width="254" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mã: B01" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="weg-vO-IjL">
+                                                    <rect key="frame" x="94" y="8" width="262" height="21"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                     <color key="textColor" red="0.0039215686269999999" green="0.69803921570000005" blue="0.38431372549999998" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="Red shoes for spring Red shoes for spring" translatesAutoresizingMaskIntoConstraints="NO" id="u99-CS-PHy">
-                                                    <rect key="frame" x="81" y="20" width="209" height="52"/>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Red shoes for spring Red shoes for spring" translatesAutoresizingMaskIntoConstraints="NO" id="u99-CS-PHy">
+                                                    <rect key="frame" x="89" y="19" width="217" height="62"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <color key="textColor" red="0.58431372550000005" green="0.81568627449999997" blue="0.70980392160000005" alpha="1" colorSpace="calibratedRGB"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textView>
-                                                <label opaque="NO" userInteractionEnabled="NO" alpha="0.5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="200k - 150k" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2da-5u-DAf">
-                                                    <rect key="frame" x="86" y="67" width="254" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" alpha="0.5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="200k - 150k" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2da-5u-DAf">
+                                                    <rect key="frame" x="94" y="79" width="89" height="18"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                                     <color key="textColor" red="0.79607843140000001" green="0.12941176469999999" blue="0.15686274510000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon_shoes.png" translatesAutoresizingMaskIntoConstraints="NO" id="8SN-mz-y8R">
-                                                    <rect key="frame" x="8" y="8" width="65" height="76"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_shoes.png" translatesAutoresizingMaskIntoConstraints="NO" id="8SN-mz-y8R">
+                                                    <rect key="frame" x="8" y="8" width="73" height="85"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="8SN-mz-y8R" secondAttribute="height" multiplier="65:76" id="SoN-EJ-Er8"/>
+                                                    </constraints>
                                                 </imageView>
                                             </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="gFj-ef-y3A" secondAttribute="trailing" id="3fh-ga-3OY"/>
+                                                <constraint firstItem="weg-vO-IjL" firstAttribute="top" secondItem="sos-iv-Pfn" secondAttribute="top" constant="8" id="C0l-rB-KWe"/>
+                                                <constraint firstItem="u99-CS-PHy" firstAttribute="top" secondItem="weg-vO-IjL" secondAttribute="bottom" constant="-10" id="Pr1-ZW-6S2"/>
+                                                <constraint firstAttribute="trailing" secondItem="u99-CS-PHy" secondAttribute="trailing" constant="69" id="Q00-zR-PFF"/>
+                                                <constraint firstAttribute="bottom" secondItem="u99-CS-PHy" secondAttribute="bottom" constant="18" id="ZQn-6y-NCq"/>
+                                                <constraint firstItem="2da-5u-DAf" firstAttribute="leading" secondItem="8SN-mz-y8R" secondAttribute="trailing" constant="13" id="ZV1-j3-6zi"/>
+                                                <constraint firstItem="gFj-ef-y3A" firstAttribute="centerY" secondItem="sos-iv-Pfn" secondAttribute="centerY" id="c3x-dw-Sd1"/>
+                                                <constraint firstItem="u99-CS-PHy" firstAttribute="leading" secondItem="8SN-mz-y8R" secondAttribute="trailing" constant="8" id="e36-bd-a0k"/>
+                                                <constraint firstItem="8SN-mz-y8R" firstAttribute="top" secondItem="sos-iv-Pfn" secondAttribute="top" constant="8" id="foS-Z7-01k"/>
+                                                <constraint firstItem="8SN-mz-y8R" firstAttribute="leading" secondItem="sos-iv-Pfn" secondAttribute="leading" constant="8" id="g1z-OO-cQR"/>
+                                                <constraint firstItem="gFj-ef-y3A" firstAttribute="height" secondItem="sos-iv-Pfn" secondAttribute="height" id="hyc-EV-GFF"/>
+                                                <constraint firstAttribute="bottom" secondItem="2da-5u-DAf" secondAttribute="bottom" constant="2" id="imR-KA-ByQ"/>
+                                                <constraint firstAttribute="bottom" secondItem="8SN-mz-y8R" secondAttribute="bottom" constant="6" id="sgT-ir-dZJ"/>
+                                                <constraint firstAttribute="trailing" secondItem="weg-vO-IjL" secondAttribute="trailing" constant="19" id="tuF-My-Oa7"/>
+                                                <constraint firstItem="weg-vO-IjL" firstAttribute="leading" secondItem="8SN-mz-y8R" secondAttribute="trailing" constant="13" id="y3W-Ia-pEV"/>
+                                            </constraints>
                                         </view>
                                     </subviews>
                                     <color key="backgroundColor" red="0.0039215686269999999" green="0.69803921570000005" blue="0.38431372549999998" alpha="1" colorSpace="calibratedRGB"/>
+                                    <constraints>
+                                        <constraint firstItem="sos-iv-Pfn" firstAttribute="centerY" secondItem="VUh-MS-6Xw" secondAttribute="centerY" id="FhA-fJ-c4S"/>
+                                        <constraint firstItem="sos-iv-Pfn" firstAttribute="width" secondItem="VUh-MS-6Xw" secondAttribute="width" id="myZ-Cm-L7m"/>
+                                        <constraint firstItem="sos-iv-Pfn" firstAttribute="height" secondItem="VUh-MS-6Xw" secondAttribute="height" id="una-oc-XoQ"/>
+                                        <constraint firstItem="sos-iv-Pfn" firstAttribute="centerX" secondItem="VUh-MS-6Xw" secondAttribute="centerX" id="yQz-6R-KoN"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="container" destination="sos-iv-Pfn" id="uXR-7N-fLW"/>

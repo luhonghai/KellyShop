@@ -16,8 +16,8 @@ class TabBarItem {
     static let VALUES = [
         TabBarItem(controller: "ProductMainController", selectedImage: "icon_shopping_bag.png", unselectedImage: "icon_shopping_bag_gray.png"),
 //        TabBarItem(controller: "ProductEditorController", selectedImage: "icon_shopping_bag.png", unselectedImage: "icon_shopping_bag_gray.png"),
-        TabBarItem(controller: "ProviderMainController", selectedImage: "icon_provider.png", unselectedImage: "icon_provider_gray.png"),
-        TabBarItem(controller: "SimpleCalculator", selectedImage: "icon_calculator.png", unselectedImage: "icon_calculator_gray.png"),
+//        TabBarItem(controller: "ProviderMainController", selectedImage: "icon_provider.png", unselectedImage: "icon_provider_gray.png"),
+//        TabBarItem(controller: "SimpleCalculator", selectedImage: "icon_calculator.png", unselectedImage: "icon_calculator_gray.png"),
         TabBarItem(controller: "UserProfileController", selectedImage: "icon_profile.png", unselectedImage: "icon_profile_gray.png")
     ]
     
@@ -88,7 +88,7 @@ class MainController: RDVTabBarController, QRCodeReaderViewControllerDelegate {
             
         }
         UIView.animateWithDuration(0.5, animations: {
-            let condition = index == 0 || index == 1
+            let condition = index == 0 // || index == 1
             self.btnAdd.alpha = condition ? 1 : 0
             self.btnAdd.frame.origin.y = self.view.frame.height - size * 1.5 - self.tabBar.frame.height - (condition ? 5 : -5)
         },

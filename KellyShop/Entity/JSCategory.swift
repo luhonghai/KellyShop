@@ -15,7 +15,7 @@ class JSCategory : JSBaseEntity {
     dynamic var name = ""
     dynamic var code = ""
     dynamic var icon = ""
-    dynamic var counter = 0
+    dynamic var counter = 999
     dynamic var shop: JSShop?
     
     let products = List<JSProduct>()
